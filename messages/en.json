@@ -1,0 +1,146 @@
+{
+  "Metadata": {
+    "title": "Mediterraneo Solar | Renewable Energy for your Home",
+    "description": "Solar panels in Alicante. Save up to 80% on your bills with Mediterraneo Solar. Installation, maintenance, and legalization of photovoltaic systems."
+  },
+  "Navigation": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "getInTouch": "Get in touch"
+  },
+  "Hero": {
+    "tagline": "Renewable Energies",
+    "title": "Powering the Next Generation.",
+    "description": "The sun is a clean energy source that doesn't pollute our environment and helps you save up to 80% on your bills in the long run.",
+    "explore": "Explore Services",
+    "speakToSales": "More Information",
+    "slide1Alt": "Solar farm installations",
+    "slide2Alt": "Home solar panels",
+    "slide3Alt": "Modern sustainable architecture"
+  },
+  "Services": {
+    "tagline": "Our Services",
+    "title": "Premium Industry Solutions",
+    "description": "Delivering world-class technological solutions from renowned manufacturers.",
+    "getQuote": "Get Custom Quote",
+    "solar": {
+      "title": "Solar Panels",
+      "description": "Installation is very simple, effective and long-lasting."
+    },
+    "hvac": {
+      "title": "HVAC",
+      "description": "Air conditioning and heating systems."
+    },
+    "electrical": {
+      "title": "Electricity",
+      "description": "Comprehensive electrical services."
+    },
+    "learnMore": "Learn more"
+  },
+  "WhyUs": {
+    "tagline": "Core Architecture",
+    "title": "Why Mediterraneo Solar?",
+    "description": "At Mediterraneo Solar we want to take care of you and your home, always maintaining our values and quality standards. We are committed to caring for the environment safely and economically for you and your family.",
+    "technical": {
+      "title": "Technical Service",
+      "description": "Our own technical service. We have total control over the development."
+    },
+    "sustainability": {
+      "title": "Sustainability",
+      "description": "High profitability that our equipment brings to your home."
+    },
+    "rd": {
+      "title": "R&D Quality",
+      "description": "Fully satisfactory results in performance, profitability, safety, and aesthetics."
+    },
+    "customer": {
+      "title": "Customer Support",
+      "description": "We also offer advice regarding subsidies, deductions, and aids you wish to process."
+    },
+    "fullService": {
+      "title": "360° Service",
+      "description": "All our staff is qualified and industry-certified."
+    }
+  },
+  "About": {
+    "tagline": "Our History",
+    "title": "Milestones that define our legacy.",
+    "description": "We are a company dedicated to the installation, maintenance, and legalization of photovoltaic installations.",
+    "cta": "Start your journey with us",
+    "ch1": {
+      "title": "Inception",
+      "subtitle": "Origins & Values",
+      "desc": "Our journey began in 2019 as an independent company. Since then, we have offered very personal and close treatment with the client."
+    },
+    "ch2": {
+      "title": "Expansion",
+      "subtitle": "Scope & Reach",
+      "desc": "Operating throughout the province of Alicante. We also work and have coverage across Murcia and Valencia."
+    },
+    "ch3": {
+      "title": "Specialization",
+      "subtitle": "Residential Focus",
+      "desc": "Our specialty is residential installations. A family business committed to bringing clean energy to every home."
+    }
+  },
+  "FAQ": {
+    "title": "F.A.Q",
+    "description": "Common questions regarding our solutions.",
+    "q1": {
+      "q": "What renewable energy solutions do you offer?",
+      "a": "We are specialists in solar panels, HVAC (air conditioning and heating), and general electrical installations for residential properties."
+    },
+    "q2": {
+      "q": "How can I get a quote for a solar installation?",
+      "a": "Simply fill out our contact form or contact us through WhatsApp. One of our experts will offer you detailed information according to your needs."
+    },
+    "q3": {
+      "q": "What are the benefits of switching to renewable energy?",
+      "a": "Switching to renewables significantly reduces operational costs (saving up to 80% on bills), lowers your carbon footprint, and increases the property value of your infrastructure."
+    },
+    "q4": {
+      "q": "Do you handle the legal paperwork and subsidies?",
+      "a": "Yes, we handle the entire legalization process of the installations and offer advice regarding subsidies, deductions, and aids that you as a client can process."
+    }
+  },
+  "Contact": {
+    "title": "Contact",
+    "description": "Ready to get started? Contact us today.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "message": "Message",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Message sent successfully! We will contact you soon.",
+      "error": "There was an error sending your message. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "address": "Partida Alzabaras Bajo, 1127A, 03290 Elx, Alicante, Spain",
+      "phone": "+34 664 419 949",
+      "email": "info.mediterraneosolar@gmail.com"
+    }
+  },
+  "Footer": {
+    "rights": "© 2024 Mediterraneo Solar. All Rights Reserved.",
+    "ready": "Ready to get started?",
+    "readyDesc": "Contact us today for a free consultation and take the first step towards a sustainable future.",
+    "seeMore": "See More",
+    "followUs": "Follow Us",
+    "legal": "Legal Information",
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy",
+    "aviso": "Legal Notice"
+  },
+  "Legal": {
+    "privacyTitle": "Privacy Policy",
+    "privacyContent": "We take your privacy seriously. All personal information collected through our contact forms is used solely for the purpose of communicating with you regarding our services. We do not sell or share your data with third parties.",
+    "noticeTitle": "Legal Notice",
+    "noticeContent": "Mediterraneo Solar is a registered business operating in Spain. All content on this website is the property of Mediterraneo Solar and is protected by copyright laws."
+  }
+}

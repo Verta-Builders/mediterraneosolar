@@ -1,0 +1,146 @@
+{
+  "Metadata": {
+    "title": "Mediterraneo Solar | Energías Renovables para tu Hogar",
+    "description": "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas con Mediterraneo Solar. Instalación, mantenimiento y legalización de sistemas fotovoltaicos."
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "about": "Sobre Nosotros",
+    "faq": "FAQ",
+    "contact": "Contacto",
+    "getInTouch": "Ponte en contacto"
+  },
+  "Hero": {
+    "tagline": "Energías Renovables",
+    "title": "Potenciando a la próxima generación.",
+    "description": "El sol es una fuente de energía limpia, que no contamina nuestro medio ambiente y que además a la larga nos ayuda a ahorrar en nuestras facturas hasta en un 80%.",
+    "explore": "Explorar Servicios",
+    "speakToSales": "Más Información",
+    "slide1Alt": "Instalaciones de granjas solares",
+    "slide2Alt": "Paneles solares para el hogar",
+    "slide3Alt": "Arquitectura moderna y sostenible"
+  },
+  "Services": {
+    "tagline": "Nuestros Servicios",
+    "title": "Soluciones Industriales Premium",
+    "description": "Distribuyendo soluciones tecnológicas de primer nivel de fabricantes reconocidos.",
+    "getQuote": "Solicitar Presupuesto",
+    "solar": {
+      "title": "Placas Solares",
+      "description": "La instalación es muy sencilla, eficaz y duradera."
+    },
+    "hvac": {
+      "title": "Climatización",
+      "description": "Aires acondicionados y calefacciones."
+    },
+    "electrical": {
+      "title": "Electricidad",
+      "description": "Servicios integrales de electricidad."
+    },
+    "learnMore": "Saber más"
+  },
+  "WhyUs": {
+    "tagline": "Arquitectura Central",
+    "title": "¿Por qué Mediterraneo Solar?",
+    "description": "En Mediterraneo Solar queremos cuidar de ti y de tu hogar, pero siempre manteniendo nuestros valores y estándares de calidad. Apostamos por el cuidado del medio ambiente de forma segura y económica para ti y para los tuyos.",
+    "technical": {
+      "title": "Servicio Técnico",
+      "description": "Servicio técnico propio. Tenemos un total control del desarrollo."
+    },
+    "sustainability": {
+      "title": "Sostenibilidad",
+      "description": "Alta rentabilidad que suponen nuestros equipos para tu vivienda."
+    },
+    "rd": {
+      "title": "Calidad I+D+i",
+      "description": "Resultados plenamente satisfactorios tanto en rendimiento y rentabilidad, como en seguridad y estética."
+    },
+    "customer": {
+      "title": "Atención al Cliente",
+      "description": "También ofrecemos asesoramiento en cuanto a subvenciones, deducciones y ayudas que el cliente quiera tramitar."
+    },
+    "fullService": {
+      "title": "Servicio 360",
+      "description": "Todo nuestro personal está cualificado y homologado en industria."
+    }
+  },
+  "About": {
+    "tagline": "Nuestra Historia",
+    "title": "Hitos que definen nuestro legado.",
+    "description": "Somos una empresa dedicada a la instalación, mantenimiento y legalización de instalaciones fotovoltaicas.",
+    "cta": "Comienza tu viaje con nosotros",
+    "ch1": {
+      "title": "Inicios",
+      "subtitle": "Orígenes y Valores",
+      "desc": "Nuestro recorrido empezó en 2019 como empresa independiente. Desde entonces ofrecemos un trato muy personal y cercano con el cliente."
+    },
+    "ch2": {
+      "title": "Expansión",
+      "subtitle": "Alcance y Cobertura",
+      "desc": "Operando a nivel provincial en Alicante. Aunque también trabajamos y damos cobertura en Murcia y Valencia."
+    },
+    "ch3": {
+      "title": "Especialización",
+      "subtitle": "Enfoque Residencial",
+      "desc": "Nuestra especialidad son las instalaciones residenciales. Una empresa familiar comprometida con llevar la energía limpia a cada hogar."
+    }
+  },
+  "FAQ": {
+    "title": "Preguntas Frecuentes",
+    "description": "Preguntas comunes sobre nuestras soluciones.",
+    "q1": {
+      "q": "¿Qué soluciones de energía renovable ofrecen?",
+      "a": "Somos especialistas en placas solares, climatización (aire acondicionado y calefacción) e instalaciones eléctricas en general para residencias."
+    },
+    "q2": {
+      "q": "¿Cómo puedo pedir un presupuesto para una instalación solar?",
+      "a": "Simplemente rellena nuestro formulario de contacto o contáctanos por WhatsApp. Uno de nuestros expertos te ofrecerá información detallada según tus necesidades."
+    },
+    "q3": {
+      "q": "¿Cuáles son los beneficios de cambiar a la energía solar?",
+      "a": "Cambiar a energías renovables reduce significativamente los costes operativos (ahorrando hasta un 80% en facturas), disminuye tu huella de carbono y aumenta el valor de tu propiedad."
+    },
+    "q4": {
+      "q": "¿Gestionan los trámites legales y las subvenciones?",
+      "a": "Sí, nosotros tramitamos toda la legalización de las instalaciones y ofrecemos asesoramiento sobre las subvenciones, deducciones y ayudas que quieras tramitar."
+    }
+  },
+  "Contact": {
+    "title": "Contacto",
+    "description": "¿Listo para empezar? Contáctanos hoy mismo.",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "message": "Comentario",
+      "submit": "Enviar Mensaje",
+      "submitting": "Enviando...",
+      "success": "¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.",
+      "error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
+    },
+    "info": {
+      "title": "Información de Contacto",
+      "address": "Partida Alzabaras Bajo, 1127A, 03290 Elx, Alicante, España",
+      "phone": "+34 664 419 949",
+      "email": "info.mediterraneosolar@gmail.com"
+    }
+  },
+  "Footer": {
+    "rights": "© 2024 Mediterraneo Solar. Todos los derechos reservados.",
+    "ready": "¿Listo para empezar?",
+    "readyDesc": "Contáctanos hoy mismo para obtener más información y dar el primer paso hacia un futuro sostenible.",
+    "seeMore": "Ver más",
+    "followUs": "Síguenos",
+    "legal": "Información Legal",
+    "privacy": "Política de Privacidad",
+    "cookies": "Política de Cookies",
+    "aviso": "Aviso Legal"
+  },
+  "Legal": {
+    "privacyTitle": "Política de Privacidad",
+    "privacyContent": "Nos tomamos muy en serio tu privacidad. Toda la información personal recopilada a través de nuestros formularios de contacto se utiliza únicamente con el propósito de comunicarnos contigo sobre nuestros servicios. No vendemos ni compartimos tus datos con terceros.",
+    "noticeTitle": "Aviso Legal",
+    "noticeContent": "Mediterraneo Solar es una empresa registrada operando en España. Todo el contenido de este sitio web es propiedad de Mediterraneo Solar y está protegido por las leyes de derechos de autor."
+  }
+}
