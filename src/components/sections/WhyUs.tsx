@@ -9,7 +9,7 @@ export default function WhyUs() {
       <div className="max-w-7xl mx-auto px-6">
         
         <div className="mb-16">
-          <span className="text-primary font-bold tracking-widest text-xs uppercase mb-2 block">{t("tagline")}</span>
+          <span className="text-green-600 font-bold tracking-widest text-xs uppercase mb-2 block">{t("tagline")}</span>
           <h2 className="text-4xl md:text-5xl font-bold font-heading text-neutral-900 tracking-tight">{t("title")}</h2>
           <p className="text-neutral-500 mt-4 max-w-2xl text-lg font-light">{t("description")}</p>
         </div>
@@ -18,17 +18,17 @@ export default function WhyUs() {
           
           {/* Large Card: Technical Service */}
           <div className="md:col-span-2 bg-white p-8 rounded-3xl border border-neutral-200 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute right-0 top-0 w-64 h-64 bg-primary-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-primary-100 transition-colors"></div>
+            <div className="absolute right-0 top-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-green-100 transition-colors"></div>
             <div className="relative z-10">
-              <div className="w-12 h-12 bg-primary-100 text-primary-600 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
                 <Wrench className="w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold font-heading text-neutral-900 mb-3">{t("technical.title")}</h3>
               <p className="text-neutral-500 leading-relaxed max-w-md font-light">{t("technical.description")}</p>
               
               <div className="mt-8 flex flex-wrap items-center gap-4 text-sm font-medium text-neutral-900">
-                <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary" /> {t("fullService.title")}</div>
-                <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-primary" /> {t("rd.title")}</div>
+                <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> {t("fullService.title")}</div>
+                <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-green-500" /> {t("rd.title")}</div>
               </div>
             </div>
           </div>
@@ -36,20 +36,20 @@ export default function WhyUs() {
           {/* Tall Card: Sustainability */}
           <div className="md:row-span-2 bg-neutral-900 p-8 rounded-3xl border border-neutral-800 text-white relative overflow-hidden group">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay"></div>
-            <div className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-primary-900/40 to-transparent"></div>
+            <div className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-green-900/40 to-transparent"></div>
             <div className="relative z-10 h-full flex flex-col justify-between">
               <div>
-                <div className="w-12 h-12 bg-white/10 text-primary-400 rounded-xl flex items-center justify-center mb-6 border border-white/10">
+                <div className="w-12 h-12 bg-white/10 text-green-400 rounded-xl flex items-center justify-center mb-6 border border-white/10">
                   <Leaf className="w-6 h-6" />
                 </div>
                 <h3 className="text-2xl font-bold font-heading mb-3">{t("sustainability.title")}</h3>
                 <p className="text-neutral-400 leading-relaxed text-sm font-light">{t("sustainability.description")}</p>
               </div>
               <div className="mt-8">
-                <div className="text-5xl font-bold font-heading tracking-tight text-primary-400 mb-1">
+                <div className="text-5xl font-bold font-heading tracking-tight text-green-400 mb-1">
                   80<span className="text-2xl text-white">%</span>
                 </div>
-                <p className="text-neutral-400 text-xs uppercase tracking-wider font-semibold">Ahorro Estimado</p>
+                <p className="text-neutral-400 text-xs uppercase tracking-wider font-semibold">{t("estimatedSavings")}</p>
               </div>
             </div>
           </div>

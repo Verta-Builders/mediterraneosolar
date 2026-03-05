@@ -31,7 +31,7 @@ export default function Services() {
         
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <span className="text-primary font-bold tracking-widest text-xs uppercase mb-2 block animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <span className="text-green-600 font-bold tracking-widest text-xs uppercase mb-2 block animate-in fade-in slide-in-from-bottom-4 duration-700">
               {t("tagline")}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold font-heading text-neutral-900 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
@@ -53,15 +53,15 @@ export default function Services() {
           {services.map((service, idx) => (
             <div 
               key={service.id} 
-              className={`group relative p-8 rounded-3xl bg-neutral-50 border border-neutral-100 hover:border-primary-200 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 duration-700`}
+              className={`group relative p-8 rounded-3xl bg-neutral-50 border border-neutral-100 hover:border-green-200 hover:shadow-lg hover:shadow-green-500/5 transition-all duration-300 animate-in fade-in slide-in-from-bottom-8 duration-700`}
               style={{ animationDelay: `${idx * 150}ms` }}
             >
-              <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
+              <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-green-600 mb-6 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
                 {service.icon}
               </div>
               <h3 className="text-xl font-bold mb-3 text-neutral-900 font-heading tracking-tight">{service.title}</h3>
               <p className="text-neutral-500 text-sm leading-relaxed mb-6 font-light">{service.desc}</p>
-              <a href="#contact" className="text-primary text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
+              <a href="#contact" className="text-green-600 text-sm font-bold flex items-center gap-2 group-hover:gap-3 transition-all">
                 {t("learnMore")} <ArrowRight className="w-4 h-4" />
               </a>
             </div>

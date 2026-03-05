@@ -11,10 +11,30 @@ import Image from "next/image";
 export default function Header() {
   const t = useTranslations("Navigation");
   const [scrolled, setScrolled] = useState(false);
+  const [overDarkSection, setOverDarkSection] = useState(true); // start true since hero is dark
 
   useEffect(() => {
+    const darkSectionIds = ["home", "global-impact"];
+
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+
+      const headerBottom = window.scrollY + 80; // approximate header height
+      let isDark = false;
+
+      for (const id of darkSectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          const bottom = top + el.offsetHeight;
+          if (headerBottom >= top && window.scrollY < bottom) {
+            isDark = true;
+            break;
+          }
+        }
+      }
+
+      setOverDarkSection(isDark);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -22,8 +42,8 @@ export default function Header() {
 
   return (
     <nav 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "glass-nav py-3" : "bg-transparent py-5"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 py-5 ${
+        scrolled ? "glass-nav" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -35,33 +55,35 @@ export default function Header() {
             {/* Placeholder for real logo */}
             {/* <Image src="/assets/brand/LOGO-SOLO.png" alt="Mediterraneo Solar" fill className="object-cover" /> */}
           </div>
-          <span className={`text-lg font-bold tracking-tight transition-colors ${scrolled ? 'text-neutral-900' : 'text-white'}`}>
+          <span className={`text-lg font-bold tracking-tight transition-colors ${overDarkSection ? 'text-white' : 'text-neutral-900'}`}>
             Mediterraneo Solar
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className={`hidden md:flex items-center space-x-10 text-sm font-medium transition-colors ${scrolled ? 'text-neutral-600' : 'text-white/80'}`}>
-          <a href="#home" className={`hover:text-primary transition-colors ${scrolled ? 'hover:text-primary' : 'hover:text-white'}`}>{t("home")}</a>
-          <a href="#services" className={`hover:text-primary transition-colors ${scrolled ? 'hover:text-primary' : 'hover:text-white'}`}>{t("services")}</a>
-          <a href="#why-us" className={`hover:text-primary transition-colors ${scrolled ? 'hover:text-primary' : 'hover:text-white'}`}>{t("about")}</a>
-          <a href="#faq" className={`hover:text-primary transition-colors ${scrolled ? 'hover:text-primary' : 'hover:text-white'}`}>{t("faq")}</a>
+        <div className={`hidden md:flex items-center space-x-10 text-sm font-medium transition-colors ${overDarkSection ? 'text-white/90' : 'text-neutral-900'}`}>
+          <a href="#home" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("home")}</a>
+          <a href="#services" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("services")}</a>
+          <a href="#why-us" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("about")}</a>
+          <a href="#faq" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("faq")}</a>
         </div>
 
         {/* Actions */}
         <div className="flex items-center gap-3">
-          <div className={`hidden sm:block ${scrolled ? '' : 'bg-white/10 rounded-md backdrop-blur-md'}`}>
+          <div className={`hidden sm:block ${overDarkSection ? 'bg-white/10 rounded-md backdrop-blur-md' : ''}`}>
             <LanguageSwitcher />
           </div>
           
           <a 
             href="#contact" 
-            className="hidden lg:flex px-5 py-2.5 rounded-full bg-primary text-white text-xs font-bold hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 items-center justify-center"
+            className={`hidden lg:flex px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 items-center justify-center
+              ${overDarkSection ? 'bg-white text-neutral-900 hover:text-green-600' : 'bg-green-600 text-white hover:bg-green-500 hover:shadow-lg hover:shadow-green-500/25'}
+            `}
           >
             {t("getInTouch")}
           </a>
           
-          <div className={scrolled ? '' : 'bg-white rounded-md'}>
+          <div className={overDarkSection ? 'bg-white rounded-md' : ''}>
             <MobileMenu />
           </div>
         </div>

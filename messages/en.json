@@ -13,13 +13,25 @@
   },
   "Hero": {
     "tagline": "Renewable Energies",
-    "title": "Powering the Next Generation.",
-    "description": "The sun is a clean energy source that doesn't pollute our environment and helps you save up to 80% on your bills in the long run.",
     "explore": "Explore Services",
     "speakToSales": "More Information",
-    "slide1Alt": "Solar farm installations",
-    "slide2Alt": "Home solar panels",
-    "slide3Alt": "Modern sustainable architecture"
+    "slides": {
+      "0": {
+        "title": "Powering the Next Generation.",
+        "description": "The sun is a clean energy source that doesn't pollute our environment and helps you save up to 80% on your bills in the long run.",
+        "alt": "Solar farm installations"
+      },
+      "1": {
+        "title": "Save Up to 80% on Your Bills.",
+        "description": "Our high-efficiency photovoltaic systems are designed to maximize your savings from day one, with a typical ROI in under 5 years.",
+        "alt": "Home solar panels"
+      },
+      "2": {
+        "title": "A Sustainable Future Starts Here.",
+        "description": "Join thousands of families choosing clean energy. Every panel installed is a step towards a greener, healthier community.",
+        "alt": "Modern sustainable architecture"
+      }
+    }
   },
   "Services": {
     "tagline": "Our Services",
@@ -63,27 +75,37 @@
     "fullService": {
       "title": "360° Service",
       "description": "All our staff is qualified and industry-certified."
-    }
+    },
+    "estimatedSavings": "Estimated Savings"
   },
   "About": {
-    "tagline": "Our History",
-    "title": "Milestones that define our legacy.",
-    "description": "We are a company dedicated to the installation, maintenance, and legalization of photovoltaic installations.",
-    "cta": "Start your journey with us",
-    "ch1": {
-      "title": "Inception",
-      "subtitle": "Origins & Values",
-      "desc": "Our journey began in 2019 as an independent company. Since then, we have offered very personal and close treatment with the client."
+    "tagline": "Our Work",
+    "title": "Excellence in every installation.",
+    "description": "At Mediterraneo Solar, we believe that every project deserves the highest level of craftsmanship. Our team of certified professionals brings passion, precision, and dedication to every job — no matter the size.",
+    "ethics1": "We use only top-tier materials from leading manufacturers, ensuring durability and peak performance for decades to come.",
+    "ethics2": "Every installation follows strict safety protocols and meets all regulatory standards, so you can enjoy peace of mind from day one.",
+    "ethics3": "Our commitment doesn't end at installation. We provide ongoing support, maintenance, and monitoring to keep your system running at its best.",
+    "cta": "Start your project with us",
+    "carouselAlt": "Mediterraneo Solar project"
+  },
+  "GlobalImpact": {
+    "tagline": "Global Impact",
+    "title": "Transforming our community, one panel at a time.",
+    "description": "By choosing Mediterraneo Solar, you are not just saving on bills. You are actively contributing to a cleaner environment, reducing your city's carbon footprint, and helping our region breathe better.",
+    "stats": {
+      "co2Label": "Tons of CO2 Reduced",
+      "co2Value": "2,500+",
+      "savingsLabel": "Average Bill Reduction",
+      "savingsValue": "80%",
+      "treesLabel": "Equivalent Trees Planted",
+      "treesValue": "15,000+"
     },
-    "ch2": {
-      "title": "Expansion",
-      "subtitle": "Scope & Reach",
-      "desc": "Operating throughout the province of Alicante. We also work and have coverage across Murcia and Valencia."
-    },
-    "ch3": {
-      "title": "Specialization",
-      "subtitle": "Residential Focus",
-      "desc": "Our specialty is residential installations. A family business committed to bringing clean energy to every home."
+    "caseStudy": {
+      "title": "Case Study: Alicante Residential Network",
+      "date": "Ongoing Impact",
+      "description": "A growing network of residential installations across the province, achieving massive collective energy savings and drastically lowering the region's reliance on non-renewable grid electricity.",
+      "targetLabel": "Sustainability Goal",
+      "targetAchieved": "100% Clean Energy"
     }
   },
   "FAQ": {
@@ -117,13 +139,18 @@
       "submit": "Send Message",
       "submitting": "Sending...",
       "success": "Message sent successfully! We will contact you soon.",
-      "error": "There was an error sending your message. Please try again."
+      "error": "There was an error sending your message. Please try again.",
+      "emailPlaceholder": "example@email.com",
+      "phonePlaceholder": "+34 600 000 000"
     },
     "info": {
       "title": "Contact Information",
       "address": "Partida Alzabaras Bajo, 1127A, 03290 Elx, Alicante, Spain",
       "phone": "+34 664 419 949",
-      "email": "info.mediterraneosolar@gmail.com"
+      "email": "info.mediterraneosolar@gmail.com",
+      "labelAddress": "Location",
+      "labelPhone": "Phone",
+      "labelEmail": "Email"
     }
   },
   "Footer": {
@@ -135,12 +162,40 @@
     "legal": "Legal Information",
     "privacy": "Privacy Policy",
     "cookies": "Cookie Policy",
-    "aviso": "Legal Notice"
+    "aviso": "Legal Notice",
+    "slogan": "Your trusted expert partner in photovoltaic and HVAC installations."
   },
   "Legal": {
     "privacyTitle": "Privacy Policy",
     "privacyContent": "We take your privacy seriously. All personal information collected through our contact forms is used solely for the purpose of communicating with you regarding our services. We do not sell or share your data with third parties.",
+    "privacyIdentidadTitle": "1. Identity of the responsible party",
+    "privacyIdentidadDesc": "The personal data collected on this website will be processed by Mediterraneo Solar, located at Partida Alzabaras Bajo, 1127A, 03290 Elx, Alicante, Spain, and email: info.mediterraneosolar@gmail.com.",
+    "privacyFinalidadTitle": "2. Purpose of data processing",
+    "privacyFinalidadDesc": "The personal data we collect through our contact forms, or other communication channels, are used exclusively to:",
+    "privacyFinalidadItem1": "Address your request or inquiry.",
+    "privacyFinalidadItem2": "Send you quotes or information about our solar panel installation, HVAC, and electrical services.",
+    "privacyFinalidadItem3": "Manage the commercial relationship in case of contracting.",
+    "privacyConservacionTitle": "3. Data retention",
+    "privacyConservacionDesc": "The data provided will be retained as long as the commercial relationship is maintained, or for the years necessary to comply with legal obligations.",
+    "privacyLegitimacionTitle": "4. Legitimacy",
+    "privacyLegitimacionDesc": "The legal basis for the processing of your data is the express consent of the user manifested through the acceptance of this Privacy Policy and the submission of the form.",
+    "privacyDerechosTitle": "5. User rights",
+    "privacyDerechosDesc": "Anyone has the right to obtain confirmation about whether Mediterraneo Solar is treating personal data that concerns them. You have the right to exercise the following rights:",
+    "privacyDerechosItem1": "Right of access, rectification, and deletion of your data.",
+    "privacyDerechosItem2": "Right to limitation and opposition to the processing of your data.",
+    "privacyDerechosItem3": "Right to portability of your data.",
+    "privacyDerechosContact": "You can exercise these rights by sending an email to info.mediterraneosolar@gmail.com.",
     "noticeTitle": "Legal Notice",
-    "noticeContent": "Mediterraneo Solar is a registered business operating in Spain. All content on this website is the property of Mediterraneo Solar and is protected by copyright laws."
+    "noticeContent": "Mediterraneo Solar is a registered business operating in Spain. All content on this website is the property of Mediterraneo Solar and is protected by copyright laws.",
+    "noticeDatosTitle": "1. Identifying Data",
+    "noticeDatosDesc1": "In compliance with the duty of information contained in article 10 of Law 34/2002, of July 11, on Services of the Information Society and Electronic Commerce (LSSI), we inform you that the web manager of this site is Mediterraneo Solar, with address at:",
+    "noticeDatosDesc2": "Partida Alzabaras Bajo, 1127A<br/>03290 Elx, Alicante, Spain<br/>Email: info.mediterraneosolar@gmail.com<br/>Phone: +34 664 419 949",
+    "noticePropiedadTitle": "2. Intellectual and Industrial Property",
+    "noticePropiedadDesc1": "All contents of this website, including texts, designs, graphics, logos, images, and source code, are the exclusive property of Mediterraneo Solar or third parties from whom their exploitation rights have been acquired, and are protected by intellectual and industrial property regulations.",
+    "noticePropiedadDesc2": "The reproduction, distribution, public communication, and transformation, totally or partially, of said contents is expressly prohibited without the express written consent of Mediterraneo Solar.",
+    "noticeGarantiasTitle": "3. Exclusion of Guarantees and Liability",
+    "noticeGarantiasDesc": "Mediterraneo Solar is not responsible, in any case, for damages of any kind that may occur, by way of example: errors or omissions in the contents, lack of availability of the portal or the transmission of viruses or malicious programs in the contents, despite having adopted all necessary technological measures to avoid it.",
+    "noticeModificacionesTitle": "4. Modifications",
+    "noticeModificacionesDesc": "Mediterraneo Solar reserves the right to make the modifications it deems appropriate in its portal without prior notice, being able to change, delete, or add both the contents and services provided through it and the way in which they are presented or located in its portal."
   }
 }

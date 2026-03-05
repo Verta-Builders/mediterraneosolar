@@ -1,69 +1,78 @@
+"use client";
+
 import { useTranslations } from "next-intl";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import ProjectCarousel from "@/components/ui/ProjectCarousel";
 
 export default function About() {
   const t = useTranslations("About");
 
-  const chapters = [
+  const carouselImages = [
     {
-      num: "01",
-      title: t("ch1.title"),
-      subtitle: t("ch1.subtitle"),
-      desc: t("ch1.desc")
+      src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop",
+      alt: t("carouselAlt") + " 1",
     },
     {
-      num: "02",
-      title: t("ch2.title"),
-      subtitle: t("ch2.subtitle"),
-      desc: t("ch2.desc")
+      src: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1600&auto=format&fit=crop",
+      alt: t("carouselAlt") + " 2",
     },
     {
-      num: "03",
-      title: t("ch3.title"),
-      subtitle: t("ch3.subtitle"),
-      desc: t("ch3.desc")
-    }
+      src: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?q=80&w=1600&auto=format&fit=crop",
+      alt: t("carouselAlt") + " 3",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1624397640148-949b1732bb0a?q=80&w=1600&auto=format&fit=crop",
+      alt: t("carouselAlt") + " 4",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=1600&auto=format&fit=crop",
+      alt: t("carouselAlt") + " 5",
+    },
   ];
 
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden">
+    <section id="about" className="overflow-hidden bg-white py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
-          
-          <div className="sticky top-32">
-            <span className="text-primary font-bold tracking-widest text-xs uppercase mb-2 block animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+          {/* Left Column — Work Ethics & Standards */}
+          <div className="lg:col-span-4 flex flex-col justify-start">
+            <span className="text-green-600 font-bold tracking-widest text-xs uppercase mb-2 block animate-in fade-in slide-in-from-bottom-4 duration-700">
               {t("tagline")}
             </span>
             <h2 className="text-4xl md:text-5xl font-bold font-heading text-neutral-900 tracking-tight mb-6 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-100">
               {t("title")}
             </h2>
-            <p className="text-neutral-500 font-light leading-relaxed mb-8 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
+            <p className="text-neutral-500 font-light leading-relaxed mb-8 text-sm animate-in fade-in slide-in-from-bottom-4 duration-700 delay-200">
               {t("description")}
             </p>
-            <a 
-              href="#contact" 
-              className="text-neutral-900 font-semibold border-b border-neutral-300 hover:border-primary pb-1 inline-flex items-center gap-2 transition-all animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300 group"
+
+            <div className="space-y-4 mb-10">
+              {(["ethics1", "ethics2", "ethics3"] as const).map((key, idx) => (
+                <div
+                  key={key}
+                  className="flex items-start gap-3 animate-in fade-in slide-in-from-bottom-4 duration-700"
+                  style={{ animationDelay: `${300 + idx * 100}ms` }}
+                >
+                  <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
+                  <p className="text-neutral-600 text-sm leading-relaxed font-light">
+                    {t(key)}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <a
+              href="#contact"
+              className="text-neutral-900 font-semibold border-b border-neutral-300 hover:border-green-600 pb-1 inline-flex items-center gap-2 transition-all animate-in fade-in slide-in-from-bottom-4 duration-700 delay-700 group"
             >
               {t("cta")} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
 
-          <div className="relative pl-8 border-l border-neutral-200 space-y-16">
-            {chapters.map((chapter, idx) => (
-              <div 
-                key={chapter.num} 
-                className="relative group animate-in fade-in slide-in-from-bottom-8 duration-700"
-                style={{ animationDelay: `${idx * 200}ms` }}
-              >
-                <span className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-white border-4 border-neutral-200 group-hover:border-primary transition-colors"></span>
-                <div className="bg-neutral-50 p-8 rounded-3xl border border-neutral-100 group-hover:shadow-xl transition-all duration-300">
-                  <span className="text-6xl font-bold font-heading text-neutral-200 absolute top-4 right-4 select-none opacity-50">{chapter.num}</span>
-                  <h3 className="text-xl font-bold font-heading text-neutral-900 mb-2 relative z-10">{chapter.title}</h3>
-                  <p className="text-primary font-medium text-sm mb-3">{chapter.subtitle}</p>
-                  <p className="text-neutral-500 font-light text-sm leading-relaxed">{chapter.desc}</p>
-                </div>
-              </div>
-            ))}
+          {/* Right Column — Infinite Scrolling Project Carousel */}
+          <div className="lg:col-span-8 animate-in fade-in slide-in-from-right-8 duration-1000 delay-300">
+            <ProjectCarousel images={carouselImages} />
           </div>
 
         </div>

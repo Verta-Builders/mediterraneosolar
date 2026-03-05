@@ -13,13 +13,25 @@
   },
   "Hero": {
     "tagline": "Energías Renovables",
-    "title": "Potenciando a la próxima generación.",
-    "description": "El sol es una fuente de energía limpia, que no contamina nuestro medio ambiente y que además a la larga nos ayuda a ahorrar en nuestras facturas hasta en un 80%.",
     "explore": "Explorar Servicios",
     "speakToSales": "Más Información",
-    "slide1Alt": "Instalaciones de granjas solares",
-    "slide2Alt": "Paneles solares para el hogar",
-    "slide3Alt": "Arquitectura moderna y sostenible"
+    "slides": {
+      "0": {
+        "title": "Potenciando a la próxima generación.",
+        "description": "El sol es una fuente de energía limpia, que no contamina nuestro medio ambiente y que además a la larga nos ayuda a ahorrar en nuestras facturas hasta en un 80%.",
+        "alt": "Instalaciones de granjas solares"
+      },
+      "1": {
+        "title": "Ahorra Hasta un 80% en tus Facturas.",
+        "description": "Nuestros sistemas fotovoltaicos de alta eficiencia están diseñados para maximizar tu ahorro desde el primer día, con un retorno de inversión en menos de 5 años.",
+        "alt": "Paneles solares para el hogar"
+      },
+      "2": {
+        "title": "Un Futuro Sostenible Empieza Aquí.",
+        "description": "Únete a miles de familias que eligen energía limpia. Cada panel instalado es un paso hacia una comunidad más verde y saludable.",
+        "alt": "Arquitectura moderna y sostenible"
+      }
+    }
   },
   "Services": {
     "tagline": "Nuestros Servicios",
@@ -63,27 +75,37 @@
     "fullService": {
       "title": "Servicio 360",
       "description": "Todo nuestro personal está cualificado y homologado en industria."
-    }
+    },
+    "estimatedSavings": "Ahorro Estimado"
   },
   "About": {
-    "tagline": "Nuestra Historia",
-    "title": "Hitos que definen nuestro legado.",
-    "description": "Somos una empresa dedicada a la instalación, mantenimiento y legalización de instalaciones fotovoltaicas.",
-    "cta": "Comienza tu viaje con nosotros",
-    "ch1": {
-      "title": "Inicios",
-      "subtitle": "Orígenes y Valores",
-      "desc": "Nuestro recorrido empezó en 2019 como empresa independiente. Desde entonces ofrecemos un trato muy personal y cercano con el cliente."
+    "tagline": "Nuestro Trabajo",
+    "title": "Excelencia en cada instalación.",
+    "description": "En Mediterraneo Solar, creemos que cada proyecto merece el más alto nivel de artesanía. Nuestro equipo de profesionales certificados aporta pasión, precisión y dedicación a cada trabajo — sin importar el tamaño.",
+    "ethics1": "Utilizamos únicamente materiales de primera calidad de los principales fabricantes, garantizando durabilidad y máximo rendimiento durante décadas.",
+    "ethics2": "Cada instalación sigue estrictos protocolos de seguridad y cumple con todos los estándares normativos, para que puedas disfrutar de total tranquilidad desde el primer día.",
+    "ethics3": "Nuestro compromiso no termina con la instalación. Ofrecemos soporte continuo, mantenimiento y supervisión para que tu sistema funcione siempre al máximo.",
+    "cta": "Comienza tu proyecto con nosotros",
+    "carouselAlt": "Proyecto de Mediterraneo Solar"
+  },
+  "GlobalImpact": {
+    "tagline": "Impacto Global",
+    "title": "Transformando nuestra comunidad, un panel a la vez.",
+    "description": "Al elegir Mediterraneo Solar, no solo ahorras en tus facturas. Estás contribuyendo activamente a un medio ambiente más limpio, reduciendo la huella de carbono de tu ciudad y ayudando a que nuestra región respire mejor.",
+    "stats": {
+      "co2Label": "Toneladas de CO2 Reducidas",
+      "co2Value": "2.500+",
+      "savingsLabel": "Reducción Media en Factura",
+      "savingsValue": "80%",
+      "treesLabel": "Árboles Equivalentes Plantados",
+      "treesValue": "15.000+"
     },
-    "ch2": {
-      "title": "Expansión",
-      "subtitle": "Alcance y Cobertura",
-      "desc": "Operando a nivel provincial en Alicante. Aunque también trabajamos y damos cobertura en Murcia y Valencia."
-    },
-    "ch3": {
-      "title": "Especialización",
-      "subtitle": "Enfoque Residencial",
-      "desc": "Nuestra especialidad son las instalaciones residenciales. Una empresa familiar comprometida con llevar la energía limpia a cada hogar."
+    "caseStudy": {
+      "title": "Caso de Éxito: Red Residencial de Alicante",
+      "date": "Impacto Continuo",
+      "description": "Una red creciente de instalaciones residenciales en toda la provincia, logrando ahorros energéticos masivos y reduciendo drásticamente la dependencia de electricidad no renovable de la red.",
+      "targetLabel": "Objetivo de Sostenibilidad",
+      "targetAchieved": "100% Energía Limpia"
     }
   },
   "FAQ": {
@@ -117,13 +139,18 @@
       "submit": "Enviar Mensaje",
       "submitting": "Enviando...",
       "success": "¡Mensaje enviado correctamente! Nos pondremos en contacto pronto.",
-      "error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo."
+      "error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.",
+      "emailPlaceholder": "ejemplo@email.com",
+      "phonePlaceholder": "+34 600 000 000"
     },
     "info": {
       "title": "Información de Contacto",
       "address": "Partida Alzabaras Bajo, 1127A, 03290 Elx, Alicante, España",
       "phone": "+34 664 419 949",
-      "email": "info.mediterraneosolar@gmail.com"
+      "email": "info.mediterraneosolar@gmail.com",
+      "labelAddress": "Ubicación",
+      "labelPhone": "Teléfono",
+      "labelEmail": "Email"
     }
   },
   "Footer": {
@@ -135,12 +162,40 @@
     "legal": "Información Legal",
     "privacy": "Política de Privacidad",
     "cookies": "Política de Cookies",
-    "aviso": "Aviso Legal"
+    "aviso": "Aviso Legal",
+    "slogan": "Tu partner experto en instalaciones fotovoltaicas y climatización de confianza."
   },
   "Legal": {
     "privacyTitle": "Política de Privacidad",
     "privacyContent": "Nos tomamos muy en serio tu privacidad. Toda la información personal recopilada a través de nuestros formularios de contacto se utiliza únicamente con el propósito de comunicarnos contigo sobre nuestros servicios. No vendemos ni compartimos tus datos con terceros.",
+    "privacyIdentidadTitle": "1. Identidad del responsable",
+    "privacyIdentidadDesc": "Los datos personales recogidos en esta web serán tratados por Mediterraneo Solar, con domicilio en Partida Alzabaras Bajo, 1127A, 03290 Elx, Alicante, España, y correo electrónico: info.mediterraneosolar@gmail.com.",
+    "privacyFinalidadTitle": "2. Finalidad del tratamiento",
+    "privacyFinalidadDesc": "Los datos personales que recopilamos a través de nuestros formularios de contacto, u otros canales de comunicación, se utilizan exclusivamente para:",
+    "privacyFinalidadItem1": "Atender su solicitud o consulta.",
+    "privacyFinalidadItem2": "Enviarle presupuestos o información sobre nuestros servicios de instalación de placas solares, climatización y electricidad.",
+    "privacyFinalidadItem3": "Gestionar la relación comercial en caso de contratación.",
+    "privacyConservacionTitle": "3. Conservación de los datos",
+    "privacyConservacionDesc": "Los datos proporcionados se conservarán mientras se mantenga la relación comercial, o durante los años necesarios para cumplir con las obligaciones legales.",
+    "privacyLegitimacionTitle": "4. Legitimación",
+    "privacyLegitimacionDesc": "La base legal para el tratamiento de sus datos es el consentimiento expreso del usuario manifestado mediante la aceptación de esta Política de Privacidad y el envío del formulario.",
+    "privacyDerechosTitle": "5. Derechos del usuario",
+    "privacyDerechosDesc": "Cualquier persona tiene derecho a obtener confirmación sobre si en Mediterraneo Solar estamos tratando datos personales que les conciernan. Usted tiene derecho a ejercer los siguientes derechos:",
+    "privacyDerechosItem1": "Derecho de acceso, rectificación y supresión de sus datos.",
+    "privacyDerechosItem2": "Derecho de limitación y oposición al tratamiento de sus datos.",
+    "privacyDerechosItem3": "Derecho a la portabilidad de sus datos.",
+    "privacyDerechosContact": "Puede ejercer estos derechos enviando un correo a info.mediterraneosolar@gmail.com.",
     "noticeTitle": "Aviso Legal",
-    "noticeContent": "Mediterraneo Solar es una empresa registrada operando en España. Todo el contenido de este sitio web es propiedad de Mediterraneo Solar y está protegido por las leyes de derechos de autor."
+    "noticeContent": "Mediterraneo Solar es una empresa registrada operando en España. Todo el contenido de este sitio web es propiedad de Mediterraneo Solar y está protegido por las leyes de derechos de autor.",
+    "noticeDatosTitle": "1. Datos Identificativos",
+    "noticeDatosDesc1": "En cumplimiento con el deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI), le informamos que el responsable web de este sitio es Mediterraneo Solar, con domicilio en:",
+    "noticeDatosDesc2": "Partida Alzabaras Bajo, 1127A<br/>03290 Elx, Alicante, España<br/>Correo electrónico: info.mediterraneosolar@gmail.com<br/>Teléfono: +34 664 419 949",
+    "noticePropiedadTitle": "2. Propiedad Intelectual e Industrial",
+    "noticePropiedadDesc1": "Todos los contenidos de este sitio web, incluyendo textos, diseños, gráficos, logotipos, imágenes y código fuente, son propiedad exclusiva de Mediterraneo Solar o de terceros a los que se ha adquirido sus derechos de explotación, y están protegidos por la normativa sobre propiedad intelectual e industrial.",
+    "noticePropiedadDesc2": "Queda expresamente prohibida la reproducción, distribución, comunicación pública y transformación, total o parcial, de dichos contenidos sin el consentimiento expreso y por escrito de Mediterraneo Solar.",
+    "noticeGarantiasTitle": "3. Exclusión de Garantías y Responsabilidad",
+    "noticeGarantiasDesc": "Mediterraneo Solar no se hace responsable, en ningún caso, de los daños y perjuicios de cualquier naturaleza que pudieran ocasionar, a título enunciativo: errores u omisiones en los contenidos, falta de disponibilidad del portal o la transmisión de virus o programas maliciosos en los contenidos, a pesar de haber adoptado todas las medidas tecnológicas necesarias para evitarlo.",
+    "noticeModificacionesTitle": "4. Modificaciones",
+    "noticeModificacionesDesc": "Mediterraneo Solar se reserva el derecho de efectuar sin previo aviso las modificaciones que considere oportunas en su portal, pudiendo cambiar, suprimir o añadir tanto los contenidos y servicios que se presten a través de la misma como la forma en la que éstos aparezcan presentados o localizados en su portal."
   }
 }

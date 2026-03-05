@@ -47,7 +47,7 @@ export default function Contact() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-neutral-900 mb-1">Ubicación</h4>
+                  <h4 className="font-bold text-neutral-900 mb-1">{t("info.labelAddress")}</h4>
                   <p className="text-neutral-500 font-light leading-relaxed">{t("info.address")}</p>
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default function Contact() {
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-neutral-900 mb-1">Teléfono</h4>
+                  <h4 className="font-bold text-neutral-900 mb-1">{t("info.labelPhone")}</h4>
                   <a href="tel:+34664419949" className="text-neutral-500 font-light hover:text-primary transition-colors">{t("info.phone")}</a>
                 </div>
               </div>
@@ -67,7 +67,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-neutral-900 mb-1">Email</h4>
+                  <h4 className="font-bold text-neutral-900 mb-1">{t("info.labelEmail")}</h4>
                   <a href="mailto:info.mediterraneosolar@gmail.com" className="text-neutral-500 font-light hover:text-primary transition-colors">{t("info.email")}</a>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function Contact() {
                     name="email" 
                     required 
                     className="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-light"
-                    placeholder="ejemplo@email.com"
+                    placeholder={t("form.emailPlaceholder")}
                   />
                 </div>
                 <div className="space-y-2">
@@ -124,7 +124,7 @@ export default function Contact() {
                     name="phone" 
                     required 
                     className="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-light"
-                    placeholder="+34 600 000 000"
+                    placeholder={t("form.phonePlaceholder")}
                   />
                 </div>
               </div>

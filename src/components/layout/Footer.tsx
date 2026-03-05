@@ -18,7 +18,7 @@ export default function Footer() {
             <p className="text-neutral-400 font-light">{t("readyDesc")}</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-end">
-            <a href="#contact" className="bg-primary text-white px-8 py-4 rounded-full text-center font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
+            <a href="#contact" className="bg-green-600 text-white px-8 py-4 rounded-full text-center font-bold transition-all duration-300 hover:bg-green-500 hover:shadow-xl hover:shadow-green-900/30 hover:-translate-y-1 active:translate-y-0 active:scale-95 shadow-lg shadow-green-900/20 flex items-center justify-center gap-2 group">
               {tNav("getInTouch")}
             </a>
           </div>
@@ -28,14 +28,14 @@ export default function Footer() {
           
           {/* Brand */}
           <div className="lg:col-span-1 space-y-6">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white">
-                <Zap className="w-5 h-5 fill-current" />
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-green-500/20 group-hover:scale-105 transition-transform duration-300">
+                <Zap className="w-4 h-4 fill-current" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-white">Mediterraneo Solar</span>
+              <span className="text-xl font-bold tracking-tight text-white transition-colors duration-300">Mediterraneo Solar</span>
             </Link>
             <p className="text-sm text-neutral-400 leading-relaxed max-w-sm">
-              Tu partner experto en instalaciones fotovoltaicas y climatización de confianza.
+              {t("slogan")}
             </p>
           </div>
 
@@ -43,10 +43,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">{t("seeMore")}</h4>
             <ul className="space-y-4 text-sm text-neutral-400 font-medium">
-              <li><a href="#home" className="hover:text-primary transition-colors">{tNav("home")}</a></li>
-              <li><a href="#services" className="hover:text-primary transition-colors">{tNav("services")}</a></li>
-              <li><a href="#why-us" className="hover:text-primary transition-colors">{tNav("about")}</a></li>
-              <li><a href="#faq" className="hover:text-primary transition-colors">{tNav("faq")}</a></li>
+              <li><a href="#home" className="hover:text-green-400 transition-colors">{tNav("home")}</a></li>
+              <li><a href="#services" className="hover:text-green-400 transition-colors">{tNav("services")}</a></li>
+              <li><a href="#why-us" className="hover:text-green-400 transition-colors">{tNav("about")}</a></li>
+              <li><a href="#faq" className="hover:text-green-400 transition-colors">{tNav("faq")}</a></li>
             </ul>
           </div>
 
@@ -55,13 +55,13 @@ export default function Footer() {
             <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">{t("followUs")}</h4>
             <ul className="space-y-4 text-sm text-neutral-400 font-medium">
               <li>
-                <a href="https://www.instagram.com/mediterraneosolar/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
-                  <Instagram className="w-4 h-4" /> Instagram
+                <a href="https://www.instagram.com/mediterraneosolar/" target="_blank" rel="noopener noreferrer" className="group hover:text-green-400 transition-colors flex items-center gap-2">
+                  <Instagram className="w-4 h-4 group-hover:-translate-y-1 transition-transform" /> Instagram
                 </a>
               </li>
               <li>
-                <a href="https://www.facebook.com/placasypanelessolares/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors flex items-center gap-2">
-                  <Facebook className="w-4 h-4" /> Facebook
+                <a href="https://www.facebook.com/placasypanelessolares/" target="_blank" rel="noopener noreferrer" className="group hover:text-green-400 transition-colors flex items-center gap-2">
+                  <Facebook className="w-4 h-4 group-hover:-translate-y-1 transition-transform" /> Facebook
                 </a>
               </li>
             </ul>
@@ -71,16 +71,16 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">{tContact("title")}</h4>
             <ul className="space-y-4 text-sm text-neutral-400">
-              <li className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="leading-relaxed">Partida Alzabaras Bajo, 1127A,<br/>03290 Elx, Alicante, España</span>
+              <li className="flex items-start gap-3 group">
+                <MapPin className="w-5 h-5 text-green-400 shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                <span className="leading-relaxed group-hover:text-white transition-colors cursor-default max-w-[200px]">{tContact("address")}</span>
               </li>
-              <li className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary shrink-0" />
+              <li className="flex items-center gap-3 group">
+                <Mail className="w-5 h-5 text-green-400 shrink-0 group-hover:scale-110 transition-transform" />
                 <a href="mailto:info.mediterraneosolar@gmail.com" className="hover:text-white transition-colors">{tContact("email")}</a>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary shrink-0" />
+              <li className="flex items-center gap-3 group">
+                <Phone className="w-5 h-5 text-green-400 shrink-0 group-hover:scale-110 transition-transform" />
                 <a href="tel:+34664419949" className="hover:text-white transition-colors">{tContact("phone")}</a>
               </li>
             </ul>
