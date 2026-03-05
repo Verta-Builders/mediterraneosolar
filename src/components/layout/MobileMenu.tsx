@@ -22,13 +22,13 @@ export default function MobileMenu() {
   const links = [
     { href: "#home", label: t("home") },
     { href: "#services", label: t("services") },
-    { href: "#why-us", label: t("about") }, // Map about to why-us or about section
-    { href: "#faq", label: t("faq") },
+    { href: "#why-us", label: t("whyUs") },
+    { href: "#about", label: t("ourWork") },
   ];
 
   return (
     <div className="md:hidden flex items-center">
-      <button 
+      <button
         onClick={() => setIsOpen(true)}
         className="text-neutral-900 p-2 hover:bg-neutral-100 rounded-md transition-colors"
         aria-label="Open menu"
@@ -52,8 +52,8 @@ export default function MobileMenu() {
                 </div>
                 <span className="text-lg font-bold tracking-tight text-neutral-900">Mediterraneo</span>
               </Link>
-              
-              <button 
+
+              <button
                 onClick={() => setIsOpen(false)}
                 className="text-neutral-500 p-2 hover:bg-neutral-100 rounded-full transition-colors"
                 aria-label="Close menu"
@@ -73,9 +73,9 @@ export default function MobileMenu() {
                   {link.label}
                 </a>
               ))}
-              
+
               <div className="mt-8 pt-8 border-t border-neutral-100">
-                <a 
+                <a
                   href="#contact"
                   onClick={() => setIsOpen(false)}
                   className="w-full flex items-center justify-center py-4 bg-primary text-white rounded-full font-bold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"

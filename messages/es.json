@@ -6,8 +6,8 @@
   "Navigation": {
     "home": "Inicio",
     "services": "Servicios",
-    "about": "Sobre Nosotros",
-    "faq": "FAQ",
+    "whyUs": "Por qué nosotros",
+    "ourWork": "Nuestro Trabajo",
     "contact": "Contacto",
     "getInTouch": "Ponte en contacto"
   },
@@ -40,15 +40,33 @@
     "getQuote": "Solicitar Presupuesto",
     "solar": {
       "title": "Placas Solares",
-      "description": "La instalación es muy sencilla, eficaz y duradera."
+      "description": "La instalación es muy sencilla, eficaz y duradera.",
+      "modalText": "Ofrecemos instalaciones de paneles solares de la máxima calidad, efectivas y duraderas. Reduce tus facturas de electricidad hasta un 80% mientras aumentas el valor de tu propiedad. Gestionamos todo el papeleo, legalización y mantenimiento.",
+      "keyInfo": [
+        "Importantes ahorros energéticos",
+        "Proceso de legalización completo",
+        "Garantías a largo plazo"
+      ]
     },
     "hvac": {
       "title": "Climatización",
-      "description": "Aires acondicionados y calefacciones."
+      "description": "Aires acondicionados y calefacciones.",
+      "modalText": "Nuestros servicios de climatización aseguran que tu hogar se mantenga cómodo todo el año. Instalamos sistemas de aire acondicionado y calefacción de alta eficiencia, silenciosos y económicos.",
+      "keyInfo": [
+        "Sistemas de bajo consumo",
+        "Instalación profesional",
+        "Confort durante todo el año"
+      ]
     },
     "electrical": {
       "title": "Electricidad",
-      "description": "Servicios integrales de electricidad."
+      "description": "Servicios integrales de electricidad.",
+      "modalText": "Desde reparaciones simples hasta el recableado completo de la propiedad, nuestros electricistas certificados ofrecen servicios integrales para mantener tu hogar seguro y plenamente operativo.",
+      "keyInfo": [
+        "Profesionales certificados",
+        "Enfoque en la seguridad",
+        "Servicios integrales"
+      ]
     },
     "learnMore": "Saber más"
   },
@@ -81,10 +99,10 @@
   "About": {
     "tagline": "Nuestro Trabajo",
     "title": "Excelencia en cada instalación.",
-    "description": "En Mediterraneo Solar, creemos que cada proyecto merece el más alto nivel de artesanía. Nuestro equipo de profesionales certificados aporta pasión, precisión y dedicación a cada trabajo — sin importar el tamaño.",
-    "ethics1": "Utilizamos únicamente materiales de primera calidad de los principales fabricantes, garantizando durabilidad y máximo rendimiento durante décadas.",
-    "ethics2": "Cada instalación sigue estrictos protocolos de seguridad y cumple con todos los estándares normativos, para que puedas disfrutar de total tranquilidad desde el primer día.",
-    "ethics3": "Nuestro compromiso no termina con la instalación. Ofrecemos soporte continuo, mantenimiento y supervisión para que tu sistema funcione siempre al máximo.",
+    "description": "Nuestros profesionales certificados aportan pasión, precisión y artesanía de primer nivel a cada proyecto, sin importar el tamaño.",
+    "ethics1": "Materiales premium de los principales fabricantes para máxima durabilidad y rendimiento.",
+    "ethics2": "Estricto cumplimiento de protocolos de seguridad y normativas para tu tranquilidad.",
+    "ethics3": "Soporte continuo, mantenimiento proactivo y supervisión del sistema.",
     "cta": "Comienza tu proyecto con nosotros",
     "carouselAlt": "Proyecto de Mediterraneo Solar"
   },

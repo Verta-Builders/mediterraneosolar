@@ -33,10 +33,10 @@ export default function About() {
   return (
     <section id="about" className="overflow-hidden bg-white py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 items-center">
 
           {/* Left Column — Work Ethics & Standards */}
-          <div className="lg:col-span-4 flex flex-col justify-start">
+          <div className="lg:col-span-2 flex flex-col justify-start">
             <span className="text-green-600 font-bold tracking-widest text-xs uppercase mb-2 block animate-in fade-in slide-in-from-bottom-4 duration-700">
               {t("tagline")}
             </span>
@@ -71,7 +71,7 @@ export default function About() {
           </div>
 
           {/* Right Column — Infinite Scrolling Project Carousel */}
-          <div className="lg:col-span-8 animate-in fade-in slide-in-from-right-8 duration-1000 delay-300">
+          <div className="lg:col-span-2 animate-in fade-in slide-in-from-right-8 duration-1000 delay-300">
             <ProjectCarousel images={carouselImages} />
           </div>
 

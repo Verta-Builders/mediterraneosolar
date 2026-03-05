@@ -41,13 +41,12 @@ export default function Header() {
   }, []);
 
   return (
-    <nav 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 py-5 ${
-        scrolled ? "glass-nav" : "bg-transparent"
-      }`}
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-5 ${scrolled ? "glass-nav shadow-sm md:shadow-none" : "bg-white shadow-sm md:shadow-none md:bg-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        
+
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <div className="relative w-8 h-8 bg-white rounded-lg flex items-center justify-center text-primary shadow-lg shadow-black/5 overflow-hidden group-hover:scale-105 transition-transform duration-300">
@@ -55,7 +54,7 @@ export default function Header() {
             {/* Placeholder for real logo */}
             {/* <Image src="/assets/brand/LOGO-SOLO.png" alt="Mediterraneo Solar" fill className="object-cover" /> */}
           </div>
-          <span className={`text-lg font-bold tracking-tight transition-colors ${overDarkSection ? 'text-white' : 'text-neutral-900'}`}>
+          <span className={`text-lg font-bold tracking-tight transition-colors ${overDarkSection ? 'text-neutral-900 md:text-white' : 'text-neutral-900'}`}>
             Mediterraneo Solar
           </span>
         </Link>
@@ -64,26 +63,26 @@ export default function Header() {
         <div className={`hidden md:flex items-center space-x-10 text-sm font-medium transition-colors ${overDarkSection ? 'text-white/90' : 'text-neutral-900'}`}>
           <a href="#home" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("home")}</a>
           <a href="#services" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("services")}</a>
-          <a href="#why-us" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("about")}</a>
-          <a href="#faq" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("faq")}</a>
+          <a href="#why-us" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("whyUs")}</a>
+          <a href="#about" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("ourWork")}</a>
         </div>
 
         {/* Actions */}
         <div className="flex items-center gap-3">
-          <div className={`hidden sm:block ${overDarkSection ? 'bg-white/10 rounded-md backdrop-blur-md' : ''}`}>
-            <LanguageSwitcher />
+          <div className={`hidden sm:block ${overDarkSection ? 'bg-white/10 rounded-full backdrop-blur-md' : ''}`}>
+            <LanguageSwitcher isDark={overDarkSection} />
           </div>
-          
-          <a 
-            href="#contact" 
+
+          <a
+            href="#contact"
             className={`hidden lg:flex px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 items-center justify-center
               ${overDarkSection ? 'bg-white text-neutral-900 hover:text-green-600' : 'bg-green-600 text-white hover:bg-green-500 hover:shadow-lg hover:shadow-green-500/25'}
             `}
           >
             {t("getInTouch")}
           </a>
-          
-          <div className={overDarkSection ? 'bg-white rounded-md' : ''}>
+
+          <div className={overDarkSection ? 'md:bg-white md:rounded-md' : ''}>
             <MobileMenu />
           </div>
         </div>

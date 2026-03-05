@@ -6,8 +6,8 @@
   "Navigation": {
     "home": "Home",
     "services": "Services",
-    "about": "About Us",
-    "faq": "FAQ",
+    "whyUs": "Why Us",
+    "ourWork": "Our Work",
     "contact": "Contact",
     "getInTouch": "Get in touch"
   },
@@ -40,15 +40,33 @@
     "getQuote": "Get Custom Quote",
     "solar": {
       "title": "Solar Panels",
-      "description": "Installation is very simple, effective and long-lasting."
+      "description": "Installation is very simple, effective and long-lasting.",
+      "modalText": "We provide top-tier solar panel installations that are both effective and long-lasting. Reduce your electricity bills by up to 80% while increasing your property value. We handle all paperwork, legalization, and maintenance.",
+      "keyInfo": [
+        "Significant energy savings",
+        "Complete legalization process",
+        "Long-term warranties"
+      ]
     },
     "hvac": {
       "title": "HVAC",
-      "description": "Air conditioning and heating systems."
+      "description": "Air conditioning and heating systems.",
+      "modalText": "Our HVAC services ensure your home stays comfortable year-round. We install high-efficiency air conditioning and heating systems that are quiet and economical.",
+      "keyInfo": [
+        "Energy-efficient systems",
+        "Professional installation",
+        "Year-round comfort"
+      ]
     },
     "electrical": {
       "title": "Electricity",
-      "description": "Comprehensive electrical services."
+      "description": "Comprehensive electrical services.",
+      "modalText": "From simple repairs to full property rewiring, our certified electricians offer comprehensive electrical services to keep your home safe and fully operational.",
+      "keyInfo": [
+        "Certified professionals",
+        "Safety first approach",
+        "Comprehensive services"
+      ]
     },
     "learnMore": "Learn more"
   },
@@ -81,10 +99,10 @@
   "About": {
     "tagline": "Our Work",
     "title": "Excellence in every installation.",
-    "description": "At Mediterraneo Solar, we believe that every project deserves the highest level of craftsmanship. Our team of certified professionals brings passion, precision, and dedication to every job — no matter the size.",
-    "ethics1": "We use only top-tier materials from leading manufacturers, ensuring durability and peak performance for decades to come.",
-    "ethics2": "Every installation follows strict safety protocols and meets all regulatory standards, so you can enjoy peace of mind from day one.",
-    "ethics3": "Our commitment doesn't end at installation. We provide ongoing support, maintenance, and monitoring to keep your system running at its best.",
+    "description": "Our certified professionals deliver top-level craftsmanship, passion, and precision to every project—no matter the size.",
+    "ethics1": "Premium materials from leading manufacturers for maximum durability and peak performance.",
+    "ethics2": "Strict adherence to safety protocols and regulatory standards for your peace of mind.",
+    "ethics3": "Continuous support, proactive maintenance, and system monitoring.",
     "cta": "Start your project with us",
     "carouselAlt": "Mediterraneo Solar project"
   },

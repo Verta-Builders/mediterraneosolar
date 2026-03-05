@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 interface CarouselImage {
   src: string;
   alt: string;
@@ -32,11 +34,12 @@ export default function ProjectCarousel({ images }: ProjectCarouselProps) {
             key={index}
             className="group min-w-[280px] md:min-w-[320px] overflow-hidden rounded-2xl border border-neutral-100 shadow-sm bg-white"
           >
-            <div className="relative h-56 w-full overflow-hidden bg-neutral-100">
-              <img
+            <div className="relative h-56 lg:h-80 w-full overflow-hidden bg-neutral-100">
+              <Image
                 src={image.src}
                 alt={image.alt}
-                className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                fill
+                className="object-cover transform transition-transform duration-700 group-hover:scale-105"
               />
             </div>
           </div>

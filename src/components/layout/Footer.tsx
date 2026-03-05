@@ -10,9 +10,9 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-950 pt-24 pb-12 text-white border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6">
-        
+
         {/* Main CTA */}
-        <div className="grid md:grid-cols-2 gap-12 mb-24 items-center border-b border-white/10 pb-24">
+        {/* <div className="grid md:grid-cols-2 gap-12 mb-24 items-center border-b border-white/10 pb-24">
           <div>
             <h2 className="text-4xl font-bold mb-4 font-heading">{t("ready")}</h2>
             <p className="text-neutral-400 font-light">{t("readyDesc")}</p>
@@ -22,10 +22,10 @@ export default function Footer() {
               {tNav("getInTouch")}
             </a>
           </div>
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
+
           {/* Brand */}
           <div className="lg:col-span-1 space-y-6">
             <Link href="/" className="flex items-center gap-2 group">
@@ -45,8 +45,8 @@ export default function Footer() {
             <ul className="space-y-4 text-sm text-neutral-400 font-medium">
               <li><a href="#home" className="hover:text-green-400 transition-colors">{tNav("home")}</a></li>
               <li><a href="#services" className="hover:text-green-400 transition-colors">{tNav("services")}</a></li>
-              <li><a href="#why-us" className="hover:text-green-400 transition-colors">{tNav("about")}</a></li>
-              <li><a href="#faq" className="hover:text-green-400 transition-colors">{tNav("faq")}</a></li>
+              <li><a href="#why-us" className="hover:text-green-400 transition-colors">{tNav("whyUs")}</a></li>
+              <li><a href="#about" className="hover:text-green-400 transition-colors">{tNav("ourWork")}</a></li>
             </ul>
           </div>
 
