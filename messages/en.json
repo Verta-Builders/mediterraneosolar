@@ -17,16 +17,19 @@
     "speakToSales": "More Information",
     "slides": {
       "0": {
+        "tagline": "Renewable Energies",
         "title": "Powering the Next Generation.",
         "description": "The sun is a clean energy source that doesn't pollute our environment and helps you save up to 80% on your bills in the long run.",
         "alt": "Solar farm installations"
       },
       "1": {
+        "tagline": "Maximum Savings",
         "title": "Save Up to 80% on Your Bills.",
         "description": "Our high-efficiency photovoltaic systems are designed to maximize your savings from day one, with a typical ROI in under 5 years.",
         "alt": "Home solar panels"
       },
       "2": {
+        "tagline": "Sustainable Future",
         "title": "A Sustainable Future Starts Here.",
         "description": "Join thousands of families choosing clean energy. Every panel installed is a step towards a greener, healthier community.",
         "alt": "Modern sustainable architecture"

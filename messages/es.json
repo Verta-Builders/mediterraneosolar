@@ -17,16 +17,19 @@
     "speakToSales": "Más Información",
     "slides": {
       "0": {
+        "tagline": "Energías Renovables",
         "title": "Potenciando a la próxima generación.",
         "description": "El sol es una fuente de energía limpia, que no contamina nuestro medio ambiente y que además a la larga nos ayuda a ahorrar en nuestras facturas hasta en un 80%.",
         "alt": "Instalaciones de granjas solares"
       },
       "1": {
+        "tagline": "Máximo Ahorro",
         "title": "Ahorra Hasta un 80% en tus Facturas.",
         "description": "Nuestros sistemas fotovoltaicos de alta eficiencia están diseñados para maximizar tu ahorro desde el primer día, con un retorno de inversión en menos de 5 años.",
         "alt": "Paneles solares para el hogar"
       },
       "2": {
+        "tagline": "Futuro Sostenible",
         "title": "Un Futuro Sostenible Empieza Aquí.",
         "description": "Únete a miles de familias que eligen energía limpia. Cada panel instalado es un paso hacia una comunidad más verde y saludable.",
         "alt": "Arquitectura moderna y sostenible"

@@ -38,15 +38,14 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden bg-neutral-900">
-      
+
       {/* Slider Images */}
       <div className="absolute inset-0 w-full h-full">
         {SLIDE_IMAGES.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${
-              index === currentSlide ? "opacity-100 scale-105" : "opacity-0 scale-100"
-            }`}
+            className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 scale-105" : "opacity-0 scale-100"
+              }`}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80 z-10" />
             <img
@@ -61,12 +60,18 @@ export default function Hero() {
       {/* Content Overlay */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center">
         <div className="max-w-4xl mx-auto">
-          
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-green-400 text-[10px] font-bold uppercase tracking-widest mb-8 shadow-sm">
+
+          <div
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-green-400 text-[10px] font-bold uppercase tracking-widest mb-8 shadow-sm transition-all duration-500 ease-out"
+            style={{
+              opacity: textVisible ? 1 : 0,
+              transform: textVisible ? "translateY(0)" : "translateY(16px)",
+            }}
+          >
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-            <span>{t("tagline")}</span>
+            <span>{t(`slides.${currentSlide}.tagline`)}</span>
           </div>
-          
+
           {/* Animated Title */}
           <h1
             className="text-5xl md:text-7xl lg:text-8xl font-bold font-heading tracking-tight text-white leading-[1.05] mb-8 drop-shadow-sm transition-all duration-500 ease-out"
@@ -77,7 +82,7 @@ export default function Hero() {
           >
             {t(`slides.${currentSlide}.title`)}
           </h1>
-          
+
           {/* Animated Description */}
           <p
             className="text-lg md:text-xl text-neutral-300 font-light leading-relaxed mb-10 max-w-2xl mx-auto transition-all duration-500 ease-out delay-100"
@@ -90,15 +95,15 @@ export default function Hero() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="#services" 
+            <a
+              href="#services"
               className="px-8 py-4 bg-white text-neutral-900 rounded-full text-sm font-bold hover:bg-green-500 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 shadow-xl shadow-white/5"
             >
               {t("explore")}
               <ArrowRight className="w-4 h-4" />
             </a>
-            <a 
-              href="#contact" 
+            <a
+              href="#contact"
               className="px-8 py-4 bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full text-sm font-bold hover:bg-white/20 transition-all duration-300"
             >
               {t("speakToSales")}
@@ -113,9 +118,8 @@ export default function Hero() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-12 h-1 rounded-full transition-all duration-300 ${
-              index === currentSlide ? "bg-white" : "bg-white/30 hover:bg-green-500"
-            }`}
+            className={`w-12 h-1 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-white" : "bg-white/30 hover:bg-green-500"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
