@@ -5,9 +5,9 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 
 const SLIDE_IMAGES = [
-  "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2672&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2670&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=2727&auto=format&fit=crop",
+  "/assets/hero/panels-on-roofs.webp",
+  "/assets/hero/electricity.webp",
+  "/assets/hero/trees-alicante.webp",
 ];
 
 const SLIDE_INTERVAL = 6000;
@@ -17,6 +17,7 @@ export default function Hero() {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [textVisible, setTextVisible] = useState(true);
+  const [timerKey, setTimerKey] = useState(0);
   const slideCount = SLIDE_IMAGES.length;
 
   const goToSlide = useCallback((index: number) => {
@@ -24,6 +25,7 @@ export default function Hero() {
     setTimeout(() => {
       setCurrentSlide(index);
       setTextVisible(true);
+      setTimerKey((prev) => prev + 1);
     }, 400);
   }, []);
 
@@ -112,19 +114,38 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Slider Indicators */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
+      {/* Progress Indicators */}
+      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-2">
         {SLIDE_IMAGES.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-12 h-1 rounded-full transition-all duration-300 ${index === currentSlide ? "bg-white" : "bg-white/30 hover:bg-green-500"
-              }`}
+            className="group relative h-1.5 w-16 bg-white/20 rounded-full overflow-hidden transition-all hover:bg-white/30 cursor-pointer"
             aria-label={`Go to slide ${index + 1}`}
-          />
+          >
+            {index === currentSlide && (
+              <div
+                key={timerKey}
+                className="absolute inset-y-0 left-0 bg-green-300 rounded-full"
+                style={{
+                  animation: `heroProgressFill ${SLIDE_INTERVAL}ms linear forwards`,
+                }}
+              />
+            )}
+            {index < currentSlide && (
+              <div className="absolute inset-0 bg-white/50 rounded-full" />
+            )}
+          </button>
         ))}
       </div>
+
+      {/* Progress bar animation keyframes */}
+      <style jsx>{`
+        @keyframes heroProgressFill {
+          from { width: 0%; }
+          to { width: 100%; }
+        }
+      `}</style>
     </section>
   );
 }
-
