@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Zap, Instagram, Facebook, MapPin, Mail, Phone } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const t = useTranslations("Footer");
@@ -29,10 +30,10 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1 space-y-6">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-green-500/20 group-hover:scale-105 transition-transform duration-300">
-                <Zap className="w-4 h-4 fill-current" />
+              <div className="relative w-48 h-24 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                <Image src="/assets/brand/mediterraneosolar-logo-and-name.png" alt="Mediterraneo Solar" fill className="object-contain" />
               </div>
-              <span className="text-xl font-bold tracking-tight text-white transition-colors duration-300">Mediterraneo Solar</span>
+              {/* <span className="text-xl font-bold tracking-tight text-white transition-colors duration-300">Mediterraneo Solar</span> */}
             </Link>
             <p className="text-sm text-neutral-400 leading-relaxed max-w-sm">
               {t("slogan")}

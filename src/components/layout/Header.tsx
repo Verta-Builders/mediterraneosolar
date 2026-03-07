@@ -49,10 +49,8 @@ export default function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative w-8 h-8 bg-white rounded-lg flex items-center justify-center text-primary shadow-lg shadow-black/5 overflow-hidden group-hover:scale-105 transition-transform duration-300">
-            <Zap className="w-5 h-5 fill-current text-primary" />
-            {/* Placeholder for real logo */}
-            {/* <Image src="/assets/brand/LOGO-SOLO.png" alt="Mediterraneo Solar" fill className="object-cover" /> */}
+          <div className="relative w-11 h-11 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+            <Image src="/assets/brand/mediterraneosolar-logo.png" alt="Mediterraneo Solar" fill className="object-contain" />
           </div>
           <span className={`text-lg font-bold tracking-tight transition-colors ${overDarkSection ? 'text-neutral-900 md:text-white' : 'text-neutral-900'}`}>
             Mediterraneo Solar

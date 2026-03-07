@@ -18,7 +18,7 @@ export default function WhyUs() {
 
           {/* Large Card: Technical Service */}
           <div className="md:col-span-2 bg-white p-8 rounded-3xl border border-neutral-200 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
-            <div className="absolute right-0 top-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-green-100 transition-colors"></div>
+            <div className="absolute right-0 top-0 w-64 h-64 bg-green-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-green-200 transition-colors"></div>
             <div className="relative z-10">
               <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
                 <Wrench className="w-6 h-6" />
@@ -36,7 +36,7 @@ export default function WhyUs() {
           {/* Tall Card: Sustainability */}
           <div className="md:row-span-2 bg-neutral-900 p-8 rounded-3xl border border-neutral-800 text-white relative overflow-hidden group">
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay"></div>
-            <div className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-green-900/40 to-transparent"></div>
+            <div className="absolute bottom-0 right-0 w-full h-1/2 bg-gradient-to-t from-green-900/70 to-transparent"></div>
             <div className="relative z-10 h-full flex flex-col justify-between">
               <div>
                 <div className="w-12 h-12 bg-white/10 text-green-400 rounded-xl flex items-center justify-center mb-6 border border-white/10">
@@ -55,7 +55,8 @@ export default function WhyUs() {
           </div>
 
           {/* Small Card 1: Customer */}
-          <div className="bg-white p-8 rounded-3xl border border-neutral-200 shadow-sm hover:shadow-md transition-all duration-300">
+          <div className="bg-white p-8 rounded-3xl border border-neutral-200 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute right-0 top-0 w-64 h-64 bg-green-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-green-200 transition-colors"></div>
             <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
               <Users className="w-6 h-6" />
             </div>
@@ -64,7 +65,8 @@ export default function WhyUs() {
           </div>
 
           {/* Small Card 2: Quality */}
-          <div className="bg-white p-8 rounded-3xl border border-neutral-200 shadow-sm hover:shadow-md transition-all duration-300">
+          <div className="bg-white p-8 rounded-3xl border border-neutral-200 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
+            <div className="absolute right-0 top-0 w-64 h-64 bg-green-100 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-green-200 transition-colors"></div>
             <div className="w-12 h-12 bg-green-100 text-green-600 rounded-xl flex items-center justify-center mb-6">
               <ShieldCheck className="w-6 h-6" />
             </div>
