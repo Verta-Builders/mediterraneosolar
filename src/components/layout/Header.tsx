@@ -42,7 +42,7 @@ export default function Header() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-5 ${
-        scrolled ? "glass-nav" : "bg-transparent"
+        scrolled ? "bg-black/10 backdrop-blur-[20px] shadow-[0_4px_30px_rgba(0,0,0,0.05)]" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
