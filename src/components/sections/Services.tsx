@@ -34,7 +34,7 @@ export default function Services() {
       desc: t("solar.description"),
       modalText: t("solar.modalText"),
       points: [t("solar.keyInfo.0"), t("solar.keyInfo.1"), t("solar.keyInfo.2")],
-      image: "/assets/projects/solar-panel-roof-1.jpg"
+      image: "/assets/services/panel.webp"
     },
     {
       id: "hvac" as const,
@@ -43,7 +43,7 @@ export default function Services() {
       desc: t("hvac.description"),
       modalText: t("hvac.modalText"),
       points: [t("hvac.keyInfo.0"), t("hvac.keyInfo.1"), t("hvac.keyInfo.2")],
-      image: "/assets/projects/solar-panel-roof-2.jpg"
+      image: "/assets/services/hvac.webp"
     },
     {
       id: "electrical" as const,
@@ -52,7 +52,7 @@ export default function Services() {
       desc: t("electrical.description"),
       modalText: t("electrical.modalText"),
       points: [t("electrical.keyInfo.0"), t("electrical.keyInfo.1"), t("electrical.keyInfo.2")],
-      image: "/assets/projects/solar-panel-roof-3.jpg"
+      image: "/assets/services/electricity.webp"
     }
   ];
 

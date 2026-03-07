@@ -8,26 +8,16 @@ export default function About() {
   const t = useTranslations("About");
 
   const carouselImages = [
-    {
-      src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1600&auto=format&fit=crop",
-      alt: t("carouselAlt") + " 1",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=1600&auto=format&fit=crop",
-      alt: t("carouselAlt") + " 2",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?q=80&w=1600&auto=format&fit=crop",
-      alt: t("carouselAlt") + " 3",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1624397640148-949b1732bb0a?q=80&w=1600&auto=format&fit=crop",
-      alt: t("carouselAlt") + " 4",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1497440001374-f26997328c1b?q=80&w=1600&auto=format&fit=crop",
-      alt: t("carouselAlt") + " 5",
-    },
+    { src: "/assets/projects/20250109_154218.jpg", alt: t("carouselAlt") + " 1" },
+    { src: "/assets/projects/20250428_132344.jpg", alt: t("carouselAlt") + " 2" },
+    { src: "/assets/projects/20250730_135111.jpg", alt: t("carouselAlt") + " 3" },
+    { src: "/assets/projects/20250904_184611.jpg", alt: t("carouselAlt") + " 4" },
+    { src: "/assets/projects/20260120_161442.jpg", alt: t("carouselAlt") + " 5" },
+    { src: "/assets/projects/solar-panel-roof-1.jpg", alt: t("carouselAlt") + " 6" },
+    { src: "/assets/projects/solar-panel-roof-2.jpg", alt: t("carouselAlt") + " 7" },
+    { src: "/assets/projects/solar-panel-roof-3.jpg", alt: t("carouselAlt") + " 8" },
+    { src: "/assets/projects/solar-panel-villa-1.jpg", alt: t("carouselAlt") + " 9" },
+    { src: "/assets/projects/solar-panel-villa-2.jpg", alt: t("carouselAlt") + " 10" },
   ];
 
   return (

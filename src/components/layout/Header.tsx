@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { Zap } from "lucide-react";
 import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
 import MobileMenu from "@/components/layout/MobileMenu";
 import Image from "next/image";
@@ -42,8 +41,9 @@ export default function Header() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-5 ${scrolled ? "glass-nav shadow-sm md:shadow-none" : "bg-white shadow-sm md:shadow-none md:bg-transparent"
-        }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-5 ${
+        scrolled ? "glass-nav" : "bg-transparent"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
@@ -52,7 +52,7 @@ export default function Header() {
           <div className="relative w-11 h-11 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
             <Image src="/assets/brand/mediterraneosolar-logo.png" alt="Mediterraneo Solar" fill className="object-contain" />
           </div>
-          <span className={`text-lg font-bold tracking-tight transition-colors ${overDarkSection ? 'text-neutral-900 md:text-white' : 'text-neutral-900'}`}>
+          <span className={`hidden md:block text-lg font-bold tracking-tight transition-colors ${overDarkSection ? 'text-white' : 'text-neutral-900'}`}>
             Mediterraneo Solar
           </span>
         </Link>
@@ -67,7 +67,7 @@ export default function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-3">
-          <div className={`hidden sm:block ${overDarkSection ? 'bg-white/10 rounded-full backdrop-blur-md' : ''}`}>
+          <div className={`${overDarkSection ? 'bg-white/10 rounded-full backdrop-blur-md' : ''}`}>
             <LanguageSwitcher isDark={overDarkSection} />
           </div>
 
@@ -81,7 +81,7 @@ export default function Header() {
           </a>
 
           <div className={overDarkSection ? 'md:bg-white md:rounded-md' : ''}>
-            <MobileMenu />
+            <MobileMenu overDarkSection={overDarkSection} scrolled={scrolled} />
           </div>
         </div>
 
