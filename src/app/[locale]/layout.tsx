@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
@@ -85,6 +86,7 @@ export default async function LocaleLayout({
             {children}
           </main>
           <Footer />
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>
