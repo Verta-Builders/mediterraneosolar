@@ -49,12 +49,12 @@ export default function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative w-11 h-11 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
-            <Image src="/assets/brand/mediterraneosolar-logo.png" alt="Mediterraneo Solar" fill className="object-contain" />
+          <div className="relative w-48 h-16 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+            <Image src={overDarkSection ? "/assets/brand/logo-name-white.png" : "/assets/brand/logo-name-black.png"} alt="Mediterraneo Solar" fill className="object-contain" />
           </div>
-          <span className={`hidden md:block text-lg font-bold tracking-tight transition-colors ${overDarkSection ? 'text-white' : 'text-neutral-900'}`}>
+          {/* <span className={`hidden md:block text-lg font-bold tracking-tight transition-colors ${overDarkSection ? 'text-white' : 'text-neutral-900'}`}>
             Mediterraneo Solar
-          </span>
+          </span> */}
         </Link>
 
         {/* Desktop Nav */}

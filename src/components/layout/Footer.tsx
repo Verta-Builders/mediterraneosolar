@@ -30,8 +30,8 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1 space-y-6">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative w-48 h-24 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
-                <Image src="/assets/brand/mediterraneosolar-logo-and-name.png" alt="Mediterraneo Solar" fill className="object-contain" />
+              <div className="relative -mt-4 w-48 h-16 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                <Image src="/assets/brand/logo-name-white.png" alt="Mediterraneo Solar" fill className="object-contain" />
               </div>
               {/* <span className="text-xl font-bold tracking-tight text-white transition-colors duration-300">Mediterraneo Solar</span> */}
             </Link>

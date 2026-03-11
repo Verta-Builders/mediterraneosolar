@@ -63,12 +63,9 @@ export default function MobileMenu({ overDarkSection, scrolled }: MobileMenuProp
             isDarkNav ? "border-white/10" : "border-neutral-100"
           }`}>
             <Link href="/" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-              <div className="relative w-9 h-9 flex items-center justify-center overflow-hidden">
-                <Image src="/assets/brand/mediterraneosolar-logo.png" alt="Mediterraneo Solar" fill className="object-contain" />
+              <div className="relative w-40 h-14 flex items-center justify-center overflow-hidden">
+                <Image src={isDarkNav ? "/assets/brand/logo-name-white.png" : "/assets/brand/logo-name-black.png"} alt="Mediterraneo Solar" fill className="object-contain" />
               </div>
-              <span className={`text-lg font-bold tracking-tight ${
-                isDarkNav ? "text-white" : "text-neutral-900"
-              }`}>Mediterraneo Solar</span>
             </Link>
 
             <button
