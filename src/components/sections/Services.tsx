@@ -59,7 +59,7 @@ export default function Services() {
   const activeService = services.find(s => s.id === activeModal);
 
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-32 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
@@ -119,15 +119,16 @@ export default function Services() {
             onClick={() => setActiveModal(null)}
           />
 
-          <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row animate-in fade-in zoom-in-95 duration-300">
+          <div className="relative bg-white rounded-3xl shadow-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row animate-in fade-in zoom-in-95 duration-300">
             {/* Image Section */}
-            <div className="relative h-48 md:h-auto md:w-2/5 shrink-0 bg-neutral-100">
+            <div className="relative h-48 md:h-auto md:w-3/5 shrink-0 bg-neutral-100">
               <Image
                 src={activeService.image}
                 alt={activeService.title}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 40vw"
+                loading="eager"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent md:bg-gradient-to-r" />
               <div className="absolute bottom-4 left-4 text-white md:hidden">

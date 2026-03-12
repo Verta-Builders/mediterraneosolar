@@ -5,7 +5,7 @@ export default function WhyUs() {
   const t = useTranslations("WhyUs");
 
   return (
-    <section id="why-us" className="py-24 bg-neutral-50">
+    <section id="why-us" className="py-32 bg-neutral-50">
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="mb-16">

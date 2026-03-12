@@ -7,7 +7,7 @@ export default function GlobalImpact() {
     const t = useTranslations("GlobalImpact");
 
     return (
-        <section id="global-impact" className="py-24 bg-neutral-900 text-white relative overflow-hidden">
+        <section id="global-impact" className="py-32 bg-neutral-900 text-white relative overflow-hidden">
             {/* Abstract World Map Dots Background */}
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:20px_20px]"></div>
 

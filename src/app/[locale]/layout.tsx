@@ -36,7 +36,7 @@ export default async function LocaleLayout({
     "@type": "Organization",
     "name": "Mediterraneo Solar",
     "url": "https://mediterraneosolarweb.web.app",
-    "logo": "https://mediterraneosolarweb.web.app/assets/brand/LOGO-SOLO.png",
+    "logo": "https://mediterraneosolarweb.web.app/assets/brand/logo.png",
     "sameAs": [
       "https://www.facebook.com/placasypanelessolares/",
       "https://www.instagram.com/mediterraneosolar/",
@@ -48,7 +48,7 @@ export default async function LocaleLayout({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "Mediterraneo Solar",
-    "image": "https://mediterraneosolarweb.web.app/assets/brand/LOGO-SOLO.png",
+    "image": "https://mediterraneosolarweb.web.app/assets/brand/logo.png",
     "url": "https://mediterraneosolarweb.web.app",
     "telephone": "+34664419949",
     "email": "info.mediterraneosolar@gmail.com",

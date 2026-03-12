@@ -17,7 +17,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-neutral-50 border-t border-neutral-200">
+    <section id="faq" className="py-32 bg-neutral-50 border-t border-neutral-200">
       <div className="max-w-3xl mx-auto px-6">
         
         <div className="text-center mb-12">
