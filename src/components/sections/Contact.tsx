@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { MapPin, Mail, Phone, Loader2, Send } from "lucide-react";
+import { MapPin, Mail, Phone, MessageCircle, Loader2, Send } from "lucide-react";
 import { sendEmail } from "@/actions/send-email";
 
 export default function Contact() {
@@ -58,7 +58,17 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-neutral-900 mb-1">{t("info.labelPhone")}</h3>
-                  <a href="tel:+34664419949" className="text-neutral-500 font-light hover:text-primary transition-colors">{t("info.phone")}</a>
+                  <a href="tel:+34621230525" className="text-neutral-500 font-light hover:text-primary transition-colors">{t("info.phone")}</a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-primary-50 text-primary rounded-xl flex items-center justify-center shrink-0">
+                  <MessageCircle className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-neutral-900 mb-1">{t("info.labelWhatsapp")}</h3>
+                  <a href="https://wa.me/34664419949" target="_blank" rel="noopener noreferrer" className="text-neutral-500 font-light hover:text-primary transition-colors">{t("info.whatsapp")}</a>
                 </div>
               </div>
 
@@ -74,7 +84,7 @@ export default function Contact() {
             </div>
 
             {/* Google Maps Embed */}
-            <div className="w-full h-80 bg-neutral-100 rounded-3xl overflow-hidden border border-neutral-200">
+            <div className="w-full h-64 bg-neutral-100 rounded-3xl overflow-hidden border border-neutral-200">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.843657731737!2d-0.7073114!3d38.26059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6237c56cdb98c3%3A0xe52631a0e1b9b9a!2sPtda.%20Alzabares%20Bajo%2C%201127A%2C%2003290%20Elche%2C%20Alicante%2C%20Spain!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
                 width="100%" 
@@ -134,7 +144,7 @@ export default function Contact() {
                 <textarea 
                   id="message" 
                   name="message" 
-                  rows={5} 
+                  rows={7} 
                   required 
                   className="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-5 py-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all font-light resize-none"
                   placeholder={t("form.message")}

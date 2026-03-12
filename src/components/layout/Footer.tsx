@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { Zap, Instagram, Facebook, MapPin, Mail, Phone } from "lucide-react";
+import { Zap, Instagram, Facebook, MapPin, Mail, Phone, MessageCircle } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -82,7 +82,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 group">
                 <Phone className="w-5 h-5 text-green-400 shrink-0 group-hover:scale-110 transition-transform" />
-                <a href="tel:+34664419949" className="hover:text-white transition-colors">{tContact("phone")}</a>
+                <a href="tel:+34621230525" className="hover:text-white transition-colors">{tContact("phone")}</a>
+              </li>
+              <li className="flex items-center gap-3 group">
+                <MessageCircle className="w-5 h-5 text-green-400 shrink-0 group-hover:scale-110 transition-transform" />
+                <a href="https://wa.me/34664419949" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">{tContact("whatsapp")}</a>
               </li>
             </ul>
           </div>

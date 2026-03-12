@@ -1,9 +1,10 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const SLIDE_IMAGES = [
   "/assets/hero/panels-on-roofs.webp",
@@ -20,6 +21,13 @@ export default function Hero() {
   const [textVisible, setTextVisible] = useState(true);
   const [timerKey, setTimerKey] = useState(0);
   const slideCount = SLIDE_IMAGES.length;
+
+  const targetRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   const goToSlide = useCallback((index: number) => {
     setTextVisible(false);
@@ -40,24 +48,37 @@ export default function Hero() {
   }, [nextSlide]);
 
   return (
-    <section id="home" className="relative w-full h-screen overflow-hidden bg-neutral-900">
+    <section ref={targetRef} id="home" className="relative w-full h-screen overflow-hidden bg-neutral-900">
 
       {/* Slider Images */}
       <div className="absolute inset-0 w-full h-full">
         {SLIDE_IMAGES.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${index === currentSlide ? "opacity-100 scale-105" : "opacity-0 scale-100"
-              }`}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
+            }`}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80 z-10" />
-            <Image
-              src={image}
-              alt={t(`slides.${index}.alt`)}
-              fill
-              priority={index === 0}
-              className="object-cover"
-            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80 z-20 pointer-events-none" />
+            
+            <motion.div
+              className="absolute inset-0 w-full h-[120%] -top-[10%]"
+              style={{ y }}
+            >
+              <div
+                className={`absolute inset-0 w-full h-full transition-transform duration-1000 ease-in-out ${
+                  index === currentSlide ? "scale-105" : "scale-100"
+                }`}
+              >
+                <Image
+                  src={image}
+                  alt={t(`slides.${index}.alt`)}
+                  fill
+                  priority={index === 0}
+                  className="object-cover pointer-events-none"
+                />
+              </div>
+            </motion.div>
           </div>
         ))}
       </div>

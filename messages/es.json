@@ -167,10 +167,12 @@
     "info": {
       "title": "Información de Contacto",
       "address": "Partida Alzabaras Bajo, 1127A, 03290 Elx, Alicante, España",
-      "phone": "+34 664 419 949",
+      "phone": "+34 621 230 525",
+      "whatsapp": "+34 664 419 949",
       "email": "info@mediterraneosolar.com",
       "labelAddress": "Ubicación",
       "labelPhone": "Teléfono",
+      "labelWhatsapp": "WhatsApp",
       "labelEmail": "Email"
     }
   },
@@ -210,7 +212,7 @@
     "noticeContent": "Mediterraneo Solar es una empresa registrada operando en España. Todo el contenido de este sitio web es propiedad de Mediterraneo Solar y está protegido por las leyes de derechos de autor.",
     "noticeDatosTitle": "1. Datos Identificativos",
     "noticeDatosDesc1": "En cumplimiento con el deber de información recogido en el artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI), le informamos que el responsable web de este sitio es Mediterraneo Solar, con domicilio en:",
-    "noticeDatosDesc2": "Partida Alzabaras Bajo, 1127A<br/>03290 Elx, Alicante, España<br/>Correo electrónico: info@mediterraneosolar.com<br/>Teléfono: +34 664 419 949",
+    "noticeDatosDesc2": "Partida Alzabaras Bajo, 1127A<br/>03290 Elx, Alicante, España<br/>Correo electrónico: info@mediterraneosolar.com<br/>Teléfono: +34 621 230 525 | WhatsApp: +34 664 419 949",
     "noticePropiedadTitle": "2. Propiedad Intelectual e Industrial",
     "noticePropiedadDesc1": "Todos los contenidos de este sitio web, incluyendo textos, diseños, gráficos, logotipos, imágenes y código fuente, son propiedad exclusiva de Mediterraneo Solar o de terceros a los que se ha adquirido sus derechos de explotación, y están protegidos por la normativa sobre propiedad intelectual e industrial.",
     "noticePropiedadDesc2": "Queda expresamente prohibida la reproducción, distribución, comunicación pública y transformación, total o parcial, de dichos contenidos sin el consentimiento expreso y por escrito de Mediterraneo Solar.",

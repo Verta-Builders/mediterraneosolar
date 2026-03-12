@@ -167,10 +167,12 @@
     "info": {
       "title": "Contact Information",
       "address": "Partida Alzabaras Bajo, 1127A, 03290 Elx, Alicante, Spain",
-      "phone": "+34 664 419 949",
+      "phone": "+34 621 230 525",
+      "whatsapp": "+34 664 419 949",
       "email": "info@mediterraneosolar.com",
       "labelAddress": "Location",
       "labelPhone": "Phone",
+      "labelWhatsapp": "WhatsApp",
       "labelEmail": "Email"
     }
   },
@@ -210,7 +212,7 @@
     "noticeContent": "Mediterraneo Solar is a registered business operating in Spain. All content on this website is the property of Mediterraneo Solar and is protected by copyright laws.",
     "noticeDatosTitle": "1. Identifying Data",
     "noticeDatosDesc1": "In compliance with the duty of information contained in article 10 of Law 34/2002, of July 11, on Services of the Information Society and Electronic Commerce (LSSI), we inform you that the web manager of this site is Mediterraneo Solar, with address at:",
-    "noticeDatosDesc2": "Partida Alzabaras Bajo, 1127A<br/>03290 Elx, Alicante, Spain<br/>Email: info@mediterraneosolar.com<br/>Phone: +34 664 419 949",
+    "noticeDatosDesc2": "Partida Alzabaras Bajo, 1127A<br/>03290 Elx, Alicante, Spain<br/>Email: info@mediterraneosolar.com<br/>Phone: +34 621 230 525 | WhatsApp: +34 664 419 949",
     "noticePropiedadTitle": "2. Intellectual and Industrial Property",
     "noticePropiedadDesc1": "All contents of this website, including texts, designs, graphics, logos, images, and source code, are the exclusive property of Mediterraneo Solar or third parties from whom their exploitation rights have been acquired, and are protected by intellectual and industrial property regulations.",
     "noticePropiedadDesc2": "The reproduction, distribution, public communication, and transformation, totally or partially, of said contents is expressly prohibited without the express written consent of Mediterraneo Solar.",
