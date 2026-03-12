@@ -17,6 +17,7 @@ export default function LanguageSwitcher({ isDark }: { isDark?: boolean }) {
   return (
     <Select defaultValue={locale} onValueChange={onSelectChange}>
       <SelectTrigger
+        aria-label="Select Language"
         className={`w-auto rounded-full h-8 border-none bg-transparent shadow-none transition-colors focus:ring-0 px-2 gap-2 ${isDark
           ? 'text-white/90 hover:text-white hover:bg-white/10'
           : 'text-neutral-900 hover:text-green-600 hover:bg-neutral-100'

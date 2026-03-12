@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const SLIDE_IMAGES = [
   "/assets/hero/panels-on-roofs.webp",
@@ -50,10 +51,12 @@ export default function Hero() {
               }`}
           >
             <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80 z-10" />
-            <img
+            <Image
               src={image}
               alt={t(`slides.${index}.alt`)}
-              className="w-full h-full object-cover"
+              fill
+              priority={index === 0}
+              className="object-cover"
             />
           </div>
         ))}

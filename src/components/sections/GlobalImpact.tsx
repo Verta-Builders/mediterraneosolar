@@ -48,7 +48,7 @@ export default function GlobalImpact() {
                                     <Globe2 className="w-5 h-5" />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-lg text-white">{t("caseStudy.title")}</h4>
+                                    <h3 className="font-bold text-lg text-white">{t("caseStudy.title")}</h3>
                                     <p className="text-xs text-neutral-400">{t("caseStudy.date")}</p>
                                 </div>
                             </div>

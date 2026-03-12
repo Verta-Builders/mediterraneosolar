@@ -47,7 +47,7 @@ export default function Contact() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-neutral-900 mb-1">{t("info.labelAddress")}</h4>
+                  <h3 className="font-bold text-neutral-900 mb-1">{t("info.labelAddress")}</h3>
                   <p className="text-neutral-500 font-light leading-relaxed">{t("info.address")}</p>
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default function Contact() {
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-neutral-900 mb-1">{t("info.labelPhone")}</h4>
+                  <h3 className="font-bold text-neutral-900 mb-1">{t("info.labelPhone")}</h3>
                   <a href="tel:+34664419949" className="text-neutral-500 font-light hover:text-primary transition-colors">{t("info.phone")}</a>
                 </div>
               </div>
@@ -67,7 +67,7 @@ export default function Contact() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-neutral-900 mb-1">{t("info.labelEmail")}</h4>
+                  <h3 className="font-bold text-neutral-900 mb-1">{t("info.labelEmail")}</h3>
                   <a href="mailto:info@mediterraneosolar.com" className="text-neutral-500 font-light hover:text-primary transition-colors">{t("info.email")}</a>
                 </div>
               </div>
