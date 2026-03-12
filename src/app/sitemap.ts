@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const host = 'https://mediterraneosolarweb.web.app'; // Will be replaced with actual domain later
+const host = 'https://www.mediterraneosolar.com'; // Will be replaced with actual domain later
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://mediterraneosolarweb.web.app/sitemap.xml',
+    sitemap: 'https://www.mediterraneosolar.com/sitemap.xml',
   };
 }

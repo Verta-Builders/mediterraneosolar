@@ -68,7 +68,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-bold text-neutral-900 mb-1">{t("info.labelEmail")}</h4>
-                  <a href="mailto:info.mediterraneosolar@gmail.com" className="text-neutral-500 font-light hover:text-primary transition-colors">{t("info.email")}</a>
+                  <a href="mailto:info@mediterraneosolar.com" className="text-neutral-500 font-light hover:text-primary transition-colors">{t("info.email")}</a>
                 </div>
               </div>
             </div>
