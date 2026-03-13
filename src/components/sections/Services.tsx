@@ -129,6 +129,8 @@ export default function Services() {
                 className="object-cover"
                 sizes="(max-width: 768px) 100vw, 40vw"
                 loading="eager"
+                placeholder="blur"
+                blurDataURL={activeService.image}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent md:bg-gradient-to-r" />
               <div className="absolute bottom-4 left-4 text-white md:hidden">
