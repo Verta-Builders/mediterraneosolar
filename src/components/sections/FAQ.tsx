@@ -14,6 +14,11 @@ export default function FAQ() {
     { value: "q2", q: t("q2.q"), a: t("q2.a") },
     { value: "q3", q: t("q3.q"), a: t("q3.a") },
     { value: "q4", q: t("q4.q"), a: t("q4.a") },
+    { value: "q5", q: t("q5.q"), a: t("q5.a") },
+    { value: "q6", q: t("q6.q"), a: t("q6.a") },
+    { value: "q7", q: t("q7.q"), a: t("q7.a") },
+    { value: "q8", q: t("q8.q"), a: t("q8.a") },
+    { value: "q9", q: t("q9.q"), a: t("q9.a") },
   ];
 
   return (

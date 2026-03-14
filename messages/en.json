@@ -147,6 +147,26 @@
     "q4": {
       "q": "Do you handle the legal paperwork and subsidies?",
       "a": "Yes, we handle the entire legalization process of the installations and offer advice regarding subsidies, deductions, and aids that you as a client can process."
+    },
+    "q5": {
+      "q": "How much does a solar panel installation cost?",
+      "a": "It really depends on the size of your home and your energy consumption. Every project is different, so we always provide a free, no-obligation quote so you know the exact price upfront — no surprises."
+    },
+    "q6": {
+      "q": "How many solar panels does my house need?",
+      "a": "Most homes need between 6 and 12 panels, depending on your electricity usage and roof space. During our free assessment, we'll look at your bills and your roof to recommend the ideal number for you."
+    },
+    "q7": {
+      "q": "What size air conditioning unit do I need for my home?",
+      "a": "As a rough guide, a 3.5 kW unit works well for a standard room, while a larger living area might need 5–7 kW. But don't worry about the technical details — we visit your home, assess the space, and recommend the right system for maximum comfort."
+    },
+    "q8": {
+      "q": "How long does the installation take?",
+      "a": "A typical solar panel installation takes just 1 to 2 days. For HVAC systems, it's usually completed within a single day. Either way, we work clean and fast so there's minimal disruption to your daily life."
+    },
+    "q9": {
+      "q": "Do solar panels need a lot of maintenance?",
+      "a": "Not at all — solar panels are very low-maintenance. An occasional cleaning and an annual check-up is usually all they need. We also offer maintenance plans so you don't have to worry about a thing."
     }
   },
   "Contact": {

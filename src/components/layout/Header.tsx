@@ -49,7 +49,7 @@ export default function Header() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative w-48 h-16 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
+          <div className="relative w-48 h-18 flex items-center justify-center overflow-hidden group-hover:scale-105 transition-transform duration-300">
             <Image src={overDarkSection ? "/assets/brand/logo-name-white.png" : "/assets/brand/logo-name-black.png"} alt="Mediterraneo Solar" fill className="object-contain" />
           </div>
           {/* <span className={`hidden md:block text-lg font-bold tracking-tight transition-colors ${overDarkSection ? 'text-white' : 'text-neutral-900'}`}>

@@ -147,6 +147,26 @@
     "q4": {
       "q": "¿Gestionan los trámites legales y las subvenciones?",
       "a": "Sí, nosotros tramitamos toda la legalización de las instalaciones y ofrecemos asesoramiento sobre las subvenciones, deducciones y ayudas que quieras tramitar."
+    },
+    "q5": {
+      "q": "¿Cuánto cuesta una instalación de placas solares?",
+      "a": "Depende del tamaño de tu vivienda y de tu consumo. Cada proyecto es diferente, por eso siempre hacemos un presupuesto gratuito y sin compromiso para que sepas el precio exacto desde el principio, sin sorpresas."
+    },
+    "q6": {
+      "q": "¿Cuántas placas solares necesita mi casa?",
+      "a": "La mayoría de las viviendas necesitan entre 6 y 12 placas, según tu consumo eléctrico y el espacio disponible en el tejado. En nuestra visita gratuita revisamos tus facturas y tu cubierta para recomendarte la cantidad ideal."
+    },
+    "q7": {
+      "q": "¿Qué potencia de aire acondicionado necesito para mi casa?",
+      "a": "Como referencia, un equipo de 3,5 kW funciona bien para una habitación estándar, mientras que un salón grande puede necesitar entre 5 y 7 kW. Pero no te preocupes por los detalles técnicos: visitamos tu hogar, evaluamos el espacio y te recomendamos el sistema adecuado."
+    },
+    "q8": {
+      "q": "¿Cuánto tiempo tarda la instalación?",
+      "a": "Una instalación de placas solares suele tardar entre 1 y 2 días. Para sistemas de climatización, normalmente se completa en un solo día. En ambos casos, trabajamos de forma limpia y rápida para causar la mínima molestia."
+    },
+    "q9": {
+      "q": "¿Las placas solares necesitan mucho mantenimiento?",
+      "a": "Para nada — las placas solares requieren muy poco mantenimiento. Con una limpieza ocasional y una revisión anual suele ser suficiente. Además, ofrecemos planes de mantenimiento para que no tengas que preocuparte de nada."
     }
   },
   "Contact": {
