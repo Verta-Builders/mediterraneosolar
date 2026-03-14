@@ -96,11 +96,28 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-xs text-neutral-600 font-medium">
           <p>{t("rights")}</p>
+          {/* Made with Love */}
+        <div className="flex items-center justify-center text-xs text-neutral-500">
+          <span>Made with</span>
+          <span className="inline-block mx-1 text-red-500 animate-pulse">🤍</span>
+          <span>by{" "}</span>
+          <a
+            href="https://www.verta.builders"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 mr-0.5 font-semibold text-neutral-400 hover:text-white transition-colors duration-300"
+          >
+            VERTA
+          </a>
+          .
+        </div>
           <div className="flex flex-wrap justify-center gap-4 md:space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-white transition-colors">{t("privacy")}</Link>
             <Link href="/legal" className="hover:text-white transition-colors">{t("aviso")}</Link>
           </div>
         </div>
+
+        
 
       </div>
     </footer>
