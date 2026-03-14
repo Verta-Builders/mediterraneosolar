@@ -78,7 +78,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 group">
                 <Mail className="w-5 h-5 text-green-400 shrink-0 group-hover:scale-110 transition-transform" />
-                <a href="mailto:info@mediterraneosolar.com" className="hover:text-white transition-colors">{tContact("email")}</a>
+                <a href="mailto:info.mediterraneosolar@gmail.com" className="hover:text-white transition-colors">{tContact("email")}</a>
               </li>
               <li className="flex items-center gap-3 group">
                 <Phone className="w-5 h-5 text-green-400 shrink-0 group-hover:scale-110 transition-transform" />

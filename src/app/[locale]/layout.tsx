@@ -51,7 +51,7 @@ export default async function LocaleLayout({
     "image": "https://www.mediterraneosolar.com/assets/brand/logo.png",
     "url": "https://www.mediterraneosolar.com",
     "telephone": "+34664419949",
-    "email": "info@mediterraneosolar.com",
+    "email": "info.mediterraneosolar@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Partida Alzabaras Bajo, 1127A",
