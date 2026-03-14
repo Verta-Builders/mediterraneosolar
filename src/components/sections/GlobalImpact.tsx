@@ -44,7 +44,7 @@ export default function GlobalImpact() {
                         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-500 to-emerald-300"></div>
                         <div className="p-8">
                             <div className="flex items-center gap-4 mb-6">
-                                <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
+                                <div className="p-3 rounded-full bg-green-500/20 flex items-center justify-center text-green-500">
                                     <Globe2 className="w-5 h-5" />
                                 </div>
                                 <div>
@@ -55,8 +55,10 @@ export default function GlobalImpact() {
                             <p className="text-neutral-300 text-sm mb-6 leading-relaxed font-light">
                                 {t("caseStudy.description")}
                             </p>
-                            <div className="w-full bg-neutral-700 h-2 rounded-full mb-2 overflow-hidden">
-                                <div className="bg-green-500 h-full w-[100%]"></div>
+                            <div className="w-full bg-neutral-700 h-4 rounded-full mb-2 overflow-hidden">
+                                <div className="bg-green-500 h-full w-[65%] flex items-center justify-center">
+                                    <span className="text-xs font-medium text-neutral-700">65%</span>
+                                </div>
                             </div>
                             <div className="flex justify-between text-xs text-neutral-400">
                                 <span>{t("caseStudy.targetLabel")}</span>
