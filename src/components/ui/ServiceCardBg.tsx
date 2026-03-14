@@ -114,8 +114,8 @@ void main() {
     float speed = 1.0 + i * 0.25;
     float freq  = (3.5 + i * 0.7) * aspect;
     float wave  = sin(uv.x * freq + t * speed + i * 2.1)
-                * 0.055 * (1.0 + sin(t * 0.5 + i) * 0.35);
-    float thick = 0.005 + 0.003 * sin(t + i * 1.7);
+                * 0.07 * (1.0 + sin(t * 0.5 + i) * 0.35);
+    float thick = 0.010 + 0.006 * sin(t + i * 1.7);
     float line  = smoothstep(thick, 0.0, abs(uv.y - y - wave));
 
     // Horizontal fade — streaks appear & disappear along x
@@ -134,7 +134,7 @@ void main() {
   // Cool breeze palette
   vec3 color = mix(vec3(0.50, 0.80, 0.86), vec3(0.72, 0.92, 0.96), n);
 
-  float intensity = (stream * 0.55 + softWind) * 0.75;
+  float intensity = (stream * 0.75 + softWind) * 0.75;
 
   gl_FragColor = vec4(color, intensity * fade);
 }
