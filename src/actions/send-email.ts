@@ -3,8 +3,9 @@
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const TO_EMAIL = process.env.CONTACT_EMAIL || "info.mediterraneosolar@gmail.com";
-
+console.log(resend);
+const TO_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "[EMAIL_ADDRESS]";
+console.log(TO_EMAIL);
 export async function sendEmail(formData: FormData) {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
@@ -16,8 +17,8 @@ export async function sendEmail(formData: FormData) {
   }
 
   try {
-    const data = await resend.emails.send({
-      from: "Mediterraneo Solar Web <onboarding@resend.dev>", // Should be updated to a verified domain in production
+    const { data, error } = await resend.emails.send({
+      from: "Mediterraneo Solar <noreply@mediterraneosolar.com>",
       to: [TO_EMAIL],
       subject: `Nuevo mensaje de contacto web de: ${name}`,
       html: `
@@ -29,6 +30,11 @@ export async function sendEmail(formData: FormData) {
         <p>${message.replace(/\n/g, '<br>')}</p>
       `,
     });
+
+    if (error) {
+      console.error("Resend API Error:", error);
+      return { success: false, error: error.message };
+    }
 
     return { success: true, data };
   } catch (error) {
