@@ -31,10 +31,10 @@ export default function MobileMenu({ overDarkSection, scrolled }: MobileMenuProp
   }, [isOpen]);
 
   const links = [
-    { href: "#home", label: t("home") },
     { href: "#services", label: t("services") },
     { href: "#why-us", label: t("whyUs") },
     { href: "#about", label: t("ourWork") },
+    { href: "#faq", label: t("commonQuestions") },
   ];
 
   // The mobile nav should follow the header's color logic:

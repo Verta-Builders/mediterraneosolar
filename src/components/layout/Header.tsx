@@ -41,7 +41,7 @@ export default function Header() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-5 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-1 ${
         scrolled ? "bg-black/10 backdrop-blur-[20px] shadow-[0_4px_30px_rgba(0,0,0,0.05)]" : "bg-transparent"
       }`}
     >
@@ -58,11 +58,11 @@ export default function Header() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className={`hidden md:flex items-center space-x-10 text-sm font-medium transition-colors ${overDarkSection ? 'text-white/90' : 'text-neutral-900'}`}>
-          <a href="#home" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("home")}</a>
+        <div className={`hidden md:flex items-center space-x-10 text-md font-medium transition-colors ${overDarkSection ? 'text-white/90' : 'text-neutral-900'}`}>
           <a href="#services" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("services")}</a>
           <a href="#why-us" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("whyUs")}</a>
           <a href="#about" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("ourWork")}</a>
+          <a href="#faq" className={`hover:text-green-600 transition-colors ${overDarkSection ? 'hover:text-white' : 'hover:text-green-600'}`}>{t("commonQuestions")}</a>
         </div>
 
         {/* Actions */}

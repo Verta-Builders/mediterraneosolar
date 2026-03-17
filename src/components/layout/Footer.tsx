@@ -44,10 +44,10 @@ export default function Footer() {
           <div>
             <h4 className="font-bold text-white mb-6 uppercase tracking-wider text-sm">{t("seeMore")}</h4>
             <ul className="space-y-4 text-sm text-neutral-400 font-medium">
-              <li><a href="#home" className="hover:text-green-400 transition-colors">{tNav("home")}</a></li>
               <li><a href="#services" className="hover:text-green-400 transition-colors">{tNav("services")}</a></li>
               <li><a href="#why-us" className="hover:text-green-400 transition-colors">{tNav("whyUs")}</a></li>
               <li><a href="#about" className="hover:text-green-400 transition-colors">{tNav("ourWork")}</a></li>
+              <li><a href="#faq" className="hover:text-green-400 transition-colors">{tNav("commonQuestions")}</a></li>
             </ul>
           </div>
 

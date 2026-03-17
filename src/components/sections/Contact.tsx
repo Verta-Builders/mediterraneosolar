@@ -86,7 +86,7 @@ export default function Contact() {
             {/* Google Maps Embed */}
             <div className="w-full h-64 bg-neutral-100 rounded-3xl overflow-hidden border border-neutral-200">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3132.843657731737!2d-0.7073114!3d38.26059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6237c56cdb98c3%3A0xe52631a0e1b9b9a!2sPtda.%20Alzabares%20Bajo%2C%201127A%2C%2003290%20Elche%2C%20Alicante%2C%20Spain!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12527.729745984294!2d-0.6253812!3d38.281059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63b5e495c56291%3A0x4ccaa29a192a5881!2sMEDITERRANEO%20SOLAR%20ENERG%C3%8DAS%20RENOVABLES!5e0!3m2!1sen!2sgr!4v1773772764887!5m2!1sen!2sgr" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
