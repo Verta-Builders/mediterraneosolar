@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { MapPin, Mail, Phone, MessageCircle, Loader2, Send } from "lucide-react";
 import { sendEmail } from "@/actions/send-email";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Contact() {
   const t = useTranslations("Contact");
@@ -99,8 +100,11 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-8 md:p-12 rounded-3xl border border-neutral-200 shadow-xl shadow-black/5 animate-in fade-in slide-in-from-right-8 duration-1000 delay-200">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="bg-white p-8 md:p-12 rounded-3xl border border-neutral-200 shadow-xl shadow-black/5 animate-in fade-in slide-in-from-right-8 duration-1000 delay-200 relative overflow-hidden">
+            <form 
+              onSubmit={handleSubmit} 
+              className={`space-y-6 transition-all duration-300 ${status === 'success' || status === 'error' ? 'blur-md opacity-50' : ''}`}
+            >
               
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-semibold text-neutral-900">{t("form.name")}</label>
@@ -167,18 +171,92 @@ export default function Contact() {
                 )}
               </button>
 
-              {status === "success" && (
-                <div className="p-4 bg-green-50 text-green-700 text-sm font-medium rounded-xl border border-green-200 text-center animate-in fade-in">
-                  {t("form.success")}
-                </div>
-              )}
-              {status === "error" && (
-                <div className="p-4 bg-red-50 text-red-700 text-sm font-medium rounded-xl border border-red-200 text-center animate-in fade-in">
-                  {t("form.error")}
-                </div>
-              )}
-
             </form>
+
+            <AnimatePresence>
+              {(status === "success" || status === "error") && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-white/40 backdrop-blur-md"
+                >
+                  {status === "success" ? (
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                      animate={{ scale: 1, opacity: 1, y: 0 }}
+                      exit={{ scale: 0.8, opacity: 0, y: 20 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                      className="flex flex-col items-center gap-6 bg-white p-8 max-w-[85%] w-full sm:max-w-sm rounded-[2rem] shadow-2xl shadow-black/10 border border-neutral-100 text-center"
+                    >
+                      <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.1 }}
+                        className="w-20 h-20 bg-green-50 rounded-full flex items-center justify-center text-green-500 shrink-0"
+                      >
+                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <motion.path 
+                            initial={{ pathLength: 0 }} 
+                            animate={{ pathLength: 1 }} 
+                            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }} 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            d="M5 13l4 4L19 7" 
+                          />
+                        </svg>
+                      </motion.div>
+                      <div>
+                        <h3 className="text-xl font-bold text-neutral-900 mb-2">{t("form.success")}</h3>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setStatus("idle")}
+                        className="w-full px-6 py-3.5 bg-neutral-900 text-white rounded-xl hover:bg-primary transition-colors font-medium text-sm"
+                      >
+                        Close
+                      </button>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                      animate={{ scale: 1, opacity: 1, y: 0 }}
+                      exit={{ scale: 0.8, opacity: 0, y: 20 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                      className="flex flex-col items-center gap-6 bg-white p-8 max-w-[85%] w-full sm:max-w-sm rounded-[2rem] shadow-2xl shadow-black/10 border border-neutral-100 text-center"
+                    >
+                      <motion.div
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.1 }}
+                        className="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center text-red-500 shrink-0"
+                      >
+                        <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <motion.path 
+                            initial={{ pathLength: 0 }} 
+                            animate={{ pathLength: 1 }} 
+                            transition={{ duration: 0.5, delay: 0.3, ease: "easeOut" }} 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round" 
+                            d="M6 18L18 6M6 6l12 12" 
+                          />
+                        </svg>
+                      </motion.div>
+                      <div>
+                        <h3 className="text-xl font-bold text-neutral-900 mb-2">{t("form.error")}</h3>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setStatus("idle")}
+                        className="w-full px-6 py-3.5 bg-neutral-900 text-white rounded-xl hover:bg-red-600 transition-colors font-medium text-sm"
+                      >
+                        Close
+                      </button>
+                    </motion.div>
+                  )}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
 
         </div>
