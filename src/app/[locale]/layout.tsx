@@ -6,14 +6,49 @@ import { notFound } from "next/navigation";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
+import { OrganizationJsonLd, LocalBusinessJsonLd, FAQJsonLd } from "@/components/seo/JsonLd";
+import type { Metadata } from 'next';
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
 
-export const metadata = {
-  title: "Mediterraneo Solar",
-  description: "Energías Renovables para tu Hogar. Paneles solares en Alicante.",
+export const metadata: Metadata = {
+  title: "Mediterraneo Solar | Energías Renovables para tu Hogar",
+  description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas con Mediterraneo Solar. Instalación, mantenimiento y legalización de sistemas fotovoltaicos.",
+  metadataBase: new URL('https://www.mediterraneosolar.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'es': '/es',
+      'en': '/en',
+    },
+  },
+  openGraph: {
+    title: "Mediterraneo Solar | Energías Renovables para tu Hogar",
+    description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas.",
+    url: 'https://www.mediterraneosolar.com',
+    siteName: 'Mediterraneo Solar',
+    images: [
+      {
+        url: 'https://www.mediterraneosolar.com/assets/brand/logo.png',
+        width: 800,
+        height: 600,
+        alt: 'Mediterraneo Solar Logo',
+      },
+    ],
+    locale: 'es_ES',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Mediterraneo Solar | Energías Renovables",
+    description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas.",
+    images: ['https://www.mediterraneosolar.com/assets/brand/logo.png'],
+  },
+  verification: {
+    google: "M-SLVaJeJLpg5IkOKs8vzLT3nWeHMYm2sWkgYdhqSSQ",
+  },
 };
 
 export default async function LocaleLayout({
@@ -30,54 +65,12 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   const currentLocale = await getLocale();
 
-  // Structured Data (JSON-LD)
-  const orgSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Mediterraneo Solar",
-    "url": "https://www.mediterraneosolar.com",
-    "logo": "https://www.mediterraneosolar.com/assets/brand/logo.png",
-    "sameAs": [
-      "https://www.facebook.com/placasypanelessolares/",
-      "https://www.instagram.com/mediterraneosolar/",
-      "https://share.google/QEBgQBMwhatY7ZTdL"
-    ]
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Mediterraneo Solar",
-    "image": "https://www.mediterraneosolar.com/assets/brand/logo.png",
-    "url": "https://www.mediterraneosolar.com",
-    "telephone": "+34664419949",
-    "email": "info.mediterraneosolar@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Partida Alzabaras Bajo, 1127A",
-      "addressLocality": "Elx",
-      "addressRegion": "Alicante",
-      "postalCode": "03290",
-      "addressCountry": "ES"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 38.26059,
-      "longitude": -0.7073114
-    }
-  };
-
   return (
     <html lang={currentLocale} className={`${inter.variable} ${jakarta.variable} scroll-smooth`}>
       <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-        />
+        <OrganizationJsonLd />
+        <LocalBusinessJsonLd />
+        <FAQJsonLd />
       </head>
       <body className="antialiased selection:bg-primary-500 selection:text-white">
         <NextIntlClientProvider messages={messages}>

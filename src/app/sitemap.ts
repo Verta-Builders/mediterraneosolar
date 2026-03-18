@@ -1,50 +1,33 @@
 import { MetadataRoute } from 'next';
 
-const host = 'https://www.mediterraneosolar.com'; // Will be replaced with actual domain later
+const host = 'https://www.mediterraneosolar.com';
+
+const locales = ['es', 'en'];
+const routes = [
+  { path: '', priority: 1.0, freq: 'weekly' },
+  { path: '/privacy', priority: 0.5, freq: 'yearly' },
+  { path: '/legal', priority: 0.5, freq: 'yearly' },
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: `${host}/es`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-      alternates: {
-        languages: {
-          es: `${host}/es`,
-          en: `${host}/en`,
+  const sitemaps: MetadataRoute.Sitemap = [];
+
+  locales.forEach((locale) => {
+    routes.forEach((route) => {
+      sitemaps.push({
+        url: `${host}/${locale}${route.path}`,
+        lastModified: new Date(),
+        changeFrequency: route.freq as any,
+        priority: route.priority,
+        alternates: {
+          languages: {
+            es: `${host}/es${route.path}`,
+            en: `${host}/en${route.path}`,
+          },
         },
-      },
-    },
-    {
-      url: `${host}/en`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 1,
-    },
-    {
-      url: `${host}/es/privacy`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: `${host}/en/privacy`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: `${host}/es/legal`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-    {
-      url: `${host}/en/legal`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    }
-  ];
+      });
+    });
+  });
+
+  return sitemaps;
 }
