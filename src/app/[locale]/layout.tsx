@@ -3,6 +3,7 @@ import { getMessages, getLocale } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import "@/styles/globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -68,6 +69,18 @@ export default async function LocaleLayout({
   return (
     <html lang={currentLocale} className={`${inter.variable} ${jakarta.variable} scroll-smooth`}>
       <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-TTNJHZY5VK"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-TTNJHZY5VK');
+          `}
+        </Script>
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
         <FAQJsonLd />
