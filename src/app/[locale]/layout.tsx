@@ -18,13 +18,6 @@ export const metadata: Metadata = {
   title: "Mediterraneo Solar | Energías Renovables para tu Hogar",
   description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas con Mediterraneo Solar. Instalación, mantenimiento y legalización de sistemas fotovoltaicos.",
   metadataBase: new URL('https://www.mediterraneosolar.com'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      'es': '/es',
-      'en': '/en',
-    },
-  },
   openGraph: {
     title: "Mediterraneo Solar | Energías Renovables para tu Hogar",
     description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas.",
