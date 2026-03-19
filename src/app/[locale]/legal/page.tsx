@@ -1,4 +1,18 @@
 import { useTranslations } from "next-intl";
+import { Metadata } from "next";
+
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const path = `/legal`;
+  return {
+    alternates: {
+      canonical: `/${locale}${path}`,
+      languages: {
+        'es': `/es${path}`,
+        'en': `/en${path}`,
+      },
+    },
+  };
+}
 
 export default function LegalNotice() {
   const t = useTranslations("Legal");

@@ -14,36 +14,48 @@ import type { Metadata } from 'next';
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta" });
 
-export const metadata: Metadata = {
-  title: "Mediterraneo Solar | Energías Renovables para tu Hogar",
-  description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas con Mediterraneo Solar. Instalación, mantenimiento y legalización de sistemas fotovoltaicos.",
-  metadataBase: new URL('https://www.mediterraneosolar.com'),
-  openGraph: {
+export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
+  const host = 'https://www.mediterraneosolar.com';
+  const path = locale === 'es' ? '/es' : '/en';
+
+  return {
     title: "Mediterraneo Solar | Energías Renovables para tu Hogar",
-    description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas.",
-    url: 'https://www.mediterraneosolar.com',
-    siteName: 'Mediterraneo Solar',
-    images: [
-      {
-        url: 'https://www.mediterraneosolar.com/assets/brand/logo.png',
-        width: 800,
-        height: 600,
-        alt: 'Mediterraneo Solar Logo',
+    description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas con Mediterraneo Solar. Instalación, mantenimiento y legalización de sistemas fotovoltaicos.",
+    metadataBase: new URL(host),
+    alternates: {
+      canonical: path,
+      languages: {
+        'es': '/es',
+        'en': '/en',
       },
-    ],
-    locale: 'es_ES',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: "Mediterraneo Solar | Energías Renovables",
-    description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas.",
-    images: ['https://www.mediterraneosolar.com/assets/brand/logo.png'],
-  },
-  verification: {
-    google: "M-SLVaJeJLpg5IkOKs8vzLT3nWeHMYm2sWkgYdhqSSQ",
-  },
-};
+    },
+    openGraph: {
+      title: "Mediterraneo Solar | Energías Renovables para tu Hogar",
+      description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas.",
+      url: host + path,
+      siteName: 'Mediterraneo Solar',
+      images: [
+        {
+          url: `${host}/assets/brand/logo.png`,
+          width: 800,
+          height: 600,
+          alt: 'Mediterraneo Solar Logo',
+        },
+      ],
+      locale: locale === 'es' ? 'es_ES' : 'en_US',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: "Mediterraneo Solar | Energías Renovables",
+      description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas.",
+      images: [`${host}/assets/brand/logo.png`],
+    },
+    verification: {
+      google: "M-SLVaJeJLpg5IkOKs8vzLT3nWeHMYm2sWkgYdhqSSQ",
+    },
+  };
+}
 
 export default async function LocaleLayout({
   children,
