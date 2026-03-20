@@ -36,7 +36,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       siteName: 'Mediterraneo Solar',
       images: [
         {
-          url: `${host}/assets/brand/preview-hero.png`,
+          url: `${host}/assets/brand/preview-hero.webp`,
           width: 800,
           height: 600,
           alt: 'Mediterraneo Solar Logo',
@@ -49,7 +49,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       card: 'summary_large_image',
       title: "Mediterraneo Solar | Energías Renovables",
       description: "Paneles solares en Alicante. Ahorra hasta un 80% en tus facturas.",
-      images: [`${host}/assets/brand/preview-hero.png`],
+      images: [`${host}/assets/brand/preview-hero.webp`],
     },
     verification: {
       google: "M-SLVaJeJLpg5IkOKs8vzLT3nWeHMYm2sWkgYdhqSSQ",

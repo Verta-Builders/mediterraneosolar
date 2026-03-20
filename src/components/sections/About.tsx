@@ -8,16 +8,16 @@ export default function About() {
   const t = useTranslations("About");
 
   const carouselImages = [
-    { src: "/assets/projects/20250109_154218.jpg", alt: t("carouselAlt") + " 1" },
-    { src: "/assets/projects/20250428_132344.jpg", alt: t("carouselAlt") + " 2" },
-    { src: "/assets/projects/20250730_135111.jpg", alt: t("carouselAlt") + " 3" },
-    { src: "/assets/projects/20250904_184611.jpg", alt: t("carouselAlt") + " 4" },
-    { src: "/assets/projects/20260120_161442.jpg", alt: t("carouselAlt") + " 5" },
-    { src: "/assets/projects/solar-panel-roof-1.jpg", alt: t("carouselAlt") + " 6" },
-    { src: "/assets/projects/solar-panel-roof-2.jpg", alt: t("carouselAlt") + " 7" },
-    { src: "/assets/projects/solar-panel-roof-3.jpg", alt: t("carouselAlt") + " 8" },
-    { src: "/assets/projects/solar-panel-villa-1.jpg", alt: t("carouselAlt") + " 9" },
-    { src: "/assets/projects/solar-panel-villa-2.jpg", alt: t("carouselAlt") + " 10" },
+    { src: "/assets/projects/solar-panel-roof-4.webp", alt: t("carouselAlt") + " 1" },
+    { src: "/assets/projects/solar-panel-roof-5.webp", alt: t("carouselAlt") + " 2" },
+    { src: "/assets/projects/solar-panel-roof-6.webp", alt: t("carouselAlt") + " 3" },
+    { src: "/assets/projects/solar-panel-roof-7.webp", alt: t("carouselAlt") + " 4" },
+    { src: "/assets/projects/solar-panel-roof-8.webp", alt: t("carouselAlt") + " 5" },
+    { src: "/assets/projects/solar-panel-roof-1.webp", alt: t("carouselAlt") + " 6" },
+    { src: "/assets/projects/solar-panel-roof-2.webp", alt: t("carouselAlt") + " 7" },
+    { src: "/assets/projects/solar-panel-roof-3.webp", alt: t("carouselAlt") + " 8" },
+    { src: "/assets/projects/solar-panel-villa-1.webp", alt: t("carouselAlt") + " 9" },
+    { src: "/assets/projects/solar-panel-villa-2.webp", alt: t("carouselAlt") + " 10" },
   ];
 
   return (
