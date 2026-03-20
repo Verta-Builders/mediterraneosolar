@@ -36,7 +36,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       siteName: 'Mediterraneo Solar',
       images: [
         {
-          url: `${host}/assets/brand/preview-hero.png`,
+          url: `${host}/assets/brand/preview-logo.png`,
           width: 800,
           height: 600,
           alt: 'Mediterraneo Solar Logo',
