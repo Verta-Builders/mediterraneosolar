@@ -7,9 +7,9 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const SLIDE_IMAGES = [
-  "/assets/hero/panels-on-roofs.webp",
-  "/assets/hero/electricity.webp",
-  "/assets/hero/trees-alicante.webp",
+  { src: "/assets/hero/panels-on-roofs.webp", position: "object-[90%_center]" },
+  { src: "/assets/hero/electricity.webp", position: "object-[5%_center]" },
+  { src: "/assets/hero/trees-alicante.webp", position: "object-[45%_center]" },
 ];
 
 const SLIDE_INTERVAL = 6000;
@@ -52,7 +52,7 @@ export default function Hero() {
 
       {/* Slider Images */}
       <div className="absolute inset-0 w-full h-full">
-        {SLIDE_IMAGES.map((image, index) => (
+        {SLIDE_IMAGES.map((slide, index) => (
           <div
             key={index}
             className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
@@ -71,11 +71,11 @@ export default function Hero() {
                 }`}
               >
                 <Image
-                  src={image}
+                  src={slide.src}
                   alt={t(`slides.${index}.alt`)}
                   fill
                   priority={index === 0}
-                  className="object-cover pointer-events-none"
+                  className={`object-cover ${slide.position} md:object-center pointer-events-none`}
                 />
               </div>
             </motion.div>
