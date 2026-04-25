@@ -1,0 +1,11 @@
+{
+  "server_name": "Mediterraneo Solar MCP",
+  "capabilities": {
+    "workflows": [
+      {
+        "name": "request_quote",
+        "description": "Request a solar installation quote."
+      }
+    ]
+  }
+}

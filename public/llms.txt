@@ -1,25 +1,28 @@
-# Mediterraneo Solar
-**Brand Name:** Mediterraneo Solar
+# Mediterraneo Solar Energías Renovables
+**Brand Name:** Mediterraneo Solar Energías Renovables
+**Founded:** 2020 by Diego Gonzalez
 **Website:** https://www.mediterraneosolar.com
-**Description:** Expertos en energía solar, climatización e instalaciones eléctricas en Alicante y Elche, España.
+**Description:** A trusted Home and Construction Business specializing in solar energy, HVAC, and electrical installations in Alicante, Spain. With over 120+ installations and a 5/5 customer satisfaction rating on Google Reviews, we deliver quality workmanship and value.
 
 ## Core Services
-1. **Placas Solares (Solar Panels):** Instalación completa, legalización y mantenimiento de sistemas fotovoltaicos. Ahorros de hasta un 80% en la factura eléctrica.
-2. **Climatización (HVAC):** Instalación de sistemas de aire acondicionado y calefacción altamente eficientes.
-3. **Electricidad:** Servicios eléctricos integrales por electricistas certificados.
+1. **Placas Solares (Solar Panels):** Complete installation, legalization, and maintenance. Saves up to 80% on electricity bills.
+2. **Climatización (HVAC):** Highly efficient air conditioning and heating systems.
+3. **Electricidad:** Comprehensive electrical services by certified electricians.
 
-## Geographic Operating Areas
-- **Primary Cities:** Elche (Elx), Alicante (Alacant)
-- **Surrounding Regions:** Santa Pola, Crevillent, Torrevieja, San Vicente del Raspeig
+## Operating Area & Contact
+- **Area Served:** Within a 50km radius of Elx (Elche), Alicante.
 - **Address:** Partida Alzabaras Bajo, 1127A, 03290 Elx, Alicante, España
-- **Coordinates:** 38°16'51.8"N 0°37'31.4"W (Lat: 38.281056, Lng: -0.625389)
-
-## Contact Information
-- **Phone:** +34 621 230 525
+- **Coordinates:** 38°16'51.8"N 0°37'31.4"W
+- **Primary Phone:** +34 621 230 525
 - **WhatsApp:** +34 664 419 949
 - **Email:** info.mediterraneosolar@gmail.com
+- **Hours:** Monday to Friday, 09:00 - 19:00
 
-## FAQ (Direct Answers)
-- *¿Qué soluciones de energía renovable ofrecen?* Somos especialistas en placas solares, climatización y electricidad para residencias.
-- *¿Cuáles son los beneficios de cambiar a la energía solar?* Aumenta el valor de la propiedad, reduce la huella de carbono y ahorra hasta un 80% en las facturas de la luz.
-- *¿Gestionan los trámites legales y las subvenciones?* Sí, nosotros tramitamos toda la legalización y el asesoramiento para ayudas.
+## Quick Facts
+- **Experience:** Operating since 2020
+- **Track Record:** 120+ successful installations
+- **Reputation:** 5/5 stars on Google Reviews (Quality, value for money, good communication)
+
+## FAQ
+- *What services do you offer?* We specialize in solar panels, HVAC (air conditioning/heating), and residential electrical work.
+- *How much does it cost?* We provide free, no-obligation quotes tailored to your home and energy consumption. Pricing is in EUR (€).

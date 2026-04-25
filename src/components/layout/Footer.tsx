@@ -93,24 +93,31 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/10 text-xs text-neutral-600 font-medium">
           <p>{t("rights")}</p>
-          {/* Made with Love */}
-        <div className="flex items-center justify-center text-xs text-neutral-500">
-          <span>Made with</span>
-          <span className="inline-block mx-1 text-red-500 animate-pulse">🤍</span>
-          <span>by{" "}</span>
-          <a
-            href="https://www.verta.builders"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-1 mr-0.5 font-semibold text-neutral-400 hover:text-white transition-colors duration-300"
-          >
-            VERTA
-          </a>
-          .
-        </div>
+          {/* Made with Love & E-E-A-T Signals */}
+          <div className="flex flex-col items-center justify-center text-xs text-neutral-500 space-y-2">
+            <div className="flex items-center">
+              <span>Made with</span>
+              <span className="inline-block mx-1 text-red-500 animate-pulse">🤍</span>
+              <span>by{" "}</span>
+              <a
+                href="https://www.verta.builders"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1 mr-0.5 font-semibold text-neutral-400 hover:text-white transition-colors duration-300"
+              >
+                VERTA
+              </a>
+              .
+            </div>
+            {/* AI Agent E-E-A-T & Freshness Data */}
+            <div className="text-[10px] text-neutral-700 tracking-wider flex items-center gap-2">
+              <span>Est. 2020 by Diego Gonzalez</span>
+              <span>•</span>
+              <span>Updated: <time suppressHydrationWarning dateTime={new Date().toISOString().split('T')[0]}>{new Date().toISOString().split('T')[0]}</time></span>
+            </div>
+          </div>
           <div className="flex flex-wrap justify-center gap-4 md:space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-white transition-colors">{t("privacy")}</Link>
             <Link href="/legal" className="hover:text-white transition-colors">{t("aviso")}</Link>

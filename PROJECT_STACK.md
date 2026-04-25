@@ -1,6 +1,6 @@
 # Project Stack & Guidelines
 
-> This document extends `CORE_STACK.md` with opinionated decisions, configuration strategies, and workflow rules that every AI agent (and human contributor) **must** follow when working on a project built with this stack. Treat this as the single source of truth for how a new project is set up and maintained.
+> This document contains configuration strategies and workflow rules that every AI agent (and human contributor) **must** follow when working on a project built with this stack. Treat this as the single source of truth for how a new project is set up and maintained.
 
 ---
 
@@ -18,8 +18,10 @@
 10. [Fonts & Typography](#10-fonts--typography)
 11. [Architecture & Directory Structure](#11-architecture--directory-structure)
 12. [State Management](#12-state-management)
-13. [Key Constraints](#13-key-constraints)
-14. [AI Agent — First-Loop Discovery Protocol](#14-ai-agent--first-loop-discovery-protocol)
+13. [Analytics & Monitoring](#13-analytics--monitoring)
+14. [Security](#14-security)
+15. [Key Constraints](#15-key-constraints)
+16. [AI Agent — First-Loop Discovery Protocol](#16-ai-agent--first-loop-discovery-protocol)
 
 ---
 
@@ -27,9 +29,13 @@
 
 | Tool | Version / Notes |
 |---|---|
-| **Next.js** | 14+ — Always use the **App Router** (`app/` directory). |
+| **Next.js** | 16+ — Always use the **App Router** (`app/` directory). |
 | **TypeScript** | Strict mode enabled. Every file must be `.ts` or `.tsx`. |
-| **React** | 18+ — Use Server Components by default; add `"use client"` only when truly needed. |
+| **React** | 19+ — Use Server Components by default; add `"use client"` only when truly needed. |
+| **shadcn/ui** | Latest — **First choice** for UI components. Always install via CLI before building custom. |
+| **Radix UI** | Headless primitives (underneath shadcn) **+** theming system (`@radix-ui/themes`). |
+| **ESLint** | 9+ (flat config) — `next/core-web-vitals`, `next/typescript`. Sensible defaults, not overly strict. |
+| **Prettier** | Runs on save / pre-commit. Single source of formatting truth — no style debates. |
 
 ### Why Next.js?
 
@@ -39,6 +45,40 @@
 - **Server Actions** for secure, zero-API-route mutations.
 - **Middleware** for locale detection, redirects, and auth guards.
 
+### Linting & Formatting
+
+#### ESLint
+
+Next.js 16 ships with ESLint 9 flat config out of the box (`eslint.config.mjs`). The default extends:
+
+- `next/core-web-vitals` — catches common React & Next.js mistakes.
+- `next/typescript` — TypeScript-aware rules (leverages `@typescript-eslint`).
+
+**Philosophy**: Keep linting **helpful, not hostile**. The goal is to catch real bugs and enforce consistency — not to nitpick every line. If a rule causes more friction than value, disable it with a comment explaining why.
+
+**Extending the config** — add plugins as needed (e.g., `eslint-plugin-tailwindcss` for class ordering). Install via npm, then add to the flat config array.
+
+#### Prettier
+
+- Format on save (editor integration) **and** via a pre-commit hook (e.g., `lint-staged` + `husky`).
+- Prettier config lives in `.prettierrc` or `prettier.config.mjs` at the project root.
+- Recommended settings:
+
+  ```json
+  {
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "printWidth": 100,
+    "plugins": ["prettier-plugin-tailwindcss"]
+  }
+  ```
+
+- The `prettier-plugin-tailwindcss` plugin **auto-sorts Tailwind classes** — providing the class-ordering auto-completions you'd expect.
+
+> **Rule**: ESLint handles code quality; Prettier handles code formatting. Never let the two conflict — use `eslint-config-prettier` if adding ESLint stylistic rules.
+
 ---
 
 ## 2. Styling, Theming & Design Tokens
@@ -47,13 +87,23 @@
 
 All visual properties (colors, spacing, radii, fonts, shadows, etc.) are defined as **design tokens** in dedicated config files. No component should ever hardcode a raw value.
 
+### Priority Order
+
+| Priority | Layer | Responsibility |
+|---|---|---|
+| **1st** | **Radix UI Themes** (`@radix-ui/themes`) | Global theming — colors, color scales, dark/light mode, radius, scaling, typography base. This is the **single source of truth** for the design system's look and feel. |
+| **2nd** | **Tailwind CSS v4** | Utility classes for layout, spacing, responsive breakpoints, and any **custom styling** not covered by the Radix theme. |
+| **3rd** | **CSS custom properties** (`tokens/`) | Low-level overrides and project-specific tokens that feed into both Radix and Tailwind. |
+
+> **Rule**: Reach for Radix UI's theming system first. Only drop down to Tailwind utilities when you need something Radix doesn't provide (custom layout, one-off spacing, responsive overrides, etc.).
+
 ### File Hierarchy
 
 ```
 ├── tailwind.config.ts          # Tailwind theme extensions, plugins, content paths
 ├── src/
 │   ├── styles/
-│   │   ├── globals.css         # Tailwind directives, CSS custom properties (tokens)
+│   │   ├── globals.css         # Tailwind directives, Radix theme import, CSS custom properties
 │   │   ├── tokens/
 │   │   │   ├── colors.css      # --color-primary, --color-secondary, etc.
 │   │   │   ├── typography.css  # --font-body, --font-heading, --font-size-*, --line-height-*
@@ -62,11 +112,51 @@ All visual properties (colors, spacing, radii, fonts, shadows, etc.) are defined
 │   │   └── animations.css      # Keyframe definitions & animation tokens
 ```
 
-### 2.1 Tailwind CSS v4
+### 2.1 Radix UI Theming (Primary)
+
+Radix UI serves a **dual role** in this stack:
+
+1. **Headless primitives** — the accessible, unstyled components underneath shadcn/ui.
+2. **Theming system** (`@radix-ui/themes`) — provides a cohesive design system with built-in color scales, dark mode, and consistent spacing/radius.
+
+#### Setup
+
+- Wrap the app in `<Theme>` from `@radix-ui/themes` in the root layout.
+- Configure the accent color, gray scale, radius, and scaling via `<Theme>` props:
+
+  ```tsx
+  import { Theme } from '@radix-ui/themes';
+  import '@radix-ui/themes/styles.css';
+
+  <Theme accentColor="blue" grayColor="slate" radius="medium" scaling="100%">
+    {children}
+  </Theme>
+  ```
+
+- To change the brand color palette across the entire project, change the `accentColor` prop — everything inherits automatically.
+
+#### What Radix Handles
+
+- **Color scales** — full light/dark palettes with proper contrast ratios built in.
+- **Dark / light mode** — toggle via `appearance` prop on `<Theme>`, or use `next-themes` for system preference detection.
+- **Radius & scaling** — consistent border radius and sizing scale across all components.
+- **Typography base** — font size scale, line heights, letter spacing.
+
+> **Rule**: Never manually define color palettes that duplicate what Radix Themes already provides. Use Radix's color tokens (`var(--accent-9)`, `var(--gray-3)`, etc.) for all themed values.
+
+### 2.2 Tailwind CSS v4 (Secondary)
 
 - **CSS-first configuration**: Import Tailwind via `@import "tailwindcss";` inside `globals.css`.
 - **Plugin**: `@tailwindcss/postcss`.
-- All custom theme values reference the CSS custom properties from the `tokens/` folder — for example:
+- Tailwind is used **alongside** Radix Themes for:
+  - **Layout & spacing**: `flex`, `grid`, `gap-*`, `p-*`, `m-*`, responsive breakpoints.
+  - **Custom one-off styles**: Anything project-specific that falls outside the Radix theme scope.
+  - **Animations**: `tw-animate-css` utilities, transition classes.
+- Custom theme values in `tailwind.config.ts` should reference CSS custom properties from the `tokens/` folder when needed.
+
+### 2.3 CSS Custom Properties (Tokens)
+
+For project-specific values that need to feed into **both** Radix and Tailwind, use the `tokens/` folder:
 
 ```css
 /* src/styles/tokens/colors.css */
@@ -93,16 +183,9 @@ All visual properties (colors, spacing, radii, fonts, shadows, etc.) are defined
 }
 ```
 
-> **Rule**: To change the primary brand color across the entire project, edit **one line** in `colors.css`. Everything — Tailwind utilities, shadcn components, Radix primitives — inherits automatically.
+> **Rule**: These tokens are for bridging values between systems and for shadcn/ui component styling. For general theming (accent colors, grays, dark mode), prefer Radix UI's built-in color scales over manually defining CSS custom properties.
 
-### 2.2 Radix UI Theming
-
-Radix UI is used as the **headless primitive layer** underneath shadcn/ui. Radix components receive their visual styling exclusively through:
-
-1. **Tailwind utility classes** applied in the shadcn component wrappers.
-2. **CSS custom properties** from the tokens files (so Radix components stay in sync with the rest of the design system).
-
-**Never add inline styles or ad-hoc class names to Radix primitives.** Always go through the shadcn wrapper or the token system.
+**Never add inline styles or ad-hoc class names to Radix primitives.** Always go through the shadcn wrapper or the Radix/token system.
 
 ---
 
@@ -168,8 +251,8 @@ This ensures:
 
 | Library | When to Use |
 |---|---|
-| **Lucide React** | Default choice — works natively with shadcn/ui. Import individual icons for tree-shaking. |
-| **Iconify** | When a specific icon is not available in Lucide. Load via `<iconify-icon>` web component (CDN). |
+| **Lucide React** | **Default choice** — works natively with shadcn/ui. Import individual icons for tree-shaking. |
+| **Iconify** _(optional)_ | Only when a specific icon is not available in Lucide. Install via `@iconify-icon/react` (npm) — **never load via CDN**. |
 
 ---
 
@@ -208,6 +291,8 @@ This ensures:
 ---
 
 ## 7. SEO & GEO (Generative Engine Optimization)
+
+> **📄 Mandatory Reference:** Before implementing or modifying any SEO/GEO features, always read and follow the full framework in **[`GEO.md`](./GEO.md)**. That file is the authoritative source for the project's SEO and Generative Engine Optimization strategy, including `llms.txt`, advanced JSON-LD patterns, citable content architecture, and the audit-ready checklist.
 
 > Every page must be optimized for both **search engines** (Google, Bing) and **AI retrieval engines** (ChatGPT, Perplexity, Gemini, etc.).
 
@@ -281,7 +366,6 @@ public/
 |---|---|
 | **date-fns** | Date manipulation, formatting, locale-aware display. |
 | **react-day-picker** | Calendar component (used inside shadcn's `calendar`). |
-| **Flatpickr** | Secondary date picker (loaded via CDN in `layout.tsx` if needed). |
 
 ---
 
@@ -289,9 +373,8 @@ public/
 
 | Service | Purpose |
 |---|---|
-| **Stripe** | Payment processing, booking deposits, webhooks. |
-| **Resend** | Transactional emails (booking confirmations, contact form submissions). |
-| **iCal Parsing** | Syncing availability with external platforms (Airbnb, Booking.com). |
+| **Stripe** _(optional)_ | Payment processing, booking deposits, webhooks. |
+| **Resend** _(optional)_ | Transactional emails (booking confirmations, contact form submissions). |
 
 - All secrets live in `.env.local` (never committed).
 - Vercel environment variables for staging / production.
@@ -300,14 +383,43 @@ public/
 
 ## 10. Fonts & Typography
 
-| Font | Role | Source |
-|---|---|---|
-| **Inter** | Body text | `next/font/google` |
-| **Cormorant Garamond** | Headings (elegant variant) | `next/font/google` |
-| **EB Garamond** | Headings (alternate) | `next/font/google` |
+### Loading Strategy — `next/font`
 
-- Font families are set as CSS custom properties in `tokens/typography.css` and mapped in `tailwind.config.ts`.
-- Change the heading font in **one place** (`tokens/typography.css`) → applies everywhere.
+All fonts **must** be loaded via `next/font/google` or `next/font/local` — **never via CDN `<link>` tags or external stylesheets**. This ensures:
+
+- **Zero layout shift** — fonts are automatically size-adjusted and preloaded.
+- **Self-hosted** — Google Fonts are downloaded at build time; no requests to external servers at runtime.
+- **Automatic `font-display: swap`** handling.
+
+### Setup Pattern
+
+```tsx
+// src/app/layout.tsx (or src/lib/fonts.ts for reuse)
+import { Inter, Playfair_Display } from 'next/font/google';
+
+const bodyFont = Inter({
+  subsets: ['latin', 'greek'],  // add subsets as needed
+  variable: '--font-body',
+  display: 'swap',
+});
+
+const headingFont = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+});
+
+// Apply on <body> or <html>:
+<body className={`${bodyFont.variable} ${headingFont.variable}`}>
+```
+
+> The specific fonts above are **examples** — choose fonts that match the project's brand during the [First-Loop Discovery Protocol](#14-ai-agent--first-loop-discovery-protocol).
+
+### Token Integration
+
+- Font families are set as CSS custom properties (`--font-body`, `--font-heading`) and mapped in `tailwind.config.ts`.
+- Change the heading or body font in **one place** (the `next/font` import + variable) → applies everywhere.
+- The `tokens/typography.css` file holds font-size scale, line-height, and letter-spacing tokens — **not** font-family definitions (those come from `next/font`).
 
 ---
 
@@ -356,22 +468,116 @@ messages/
 
 ---
 
-## 13. Key Constraints
+## 13. Analytics & Monitoring
+
+Every project includes analytics **by default**. Both tools below should be set up during initial project scaffolding.
+
+| Tool | Purpose | Setup |
+|---|---|---|
+| **Google Analytics 4** | Traffic, user behavior, conversions, audience insights. | Install via `@next/third-parties` — use the `<GoogleAnalytics gtag={GA_ID} />` component in the root layout. The measurement ID (`G-XXXXXXXXXX`) lives in `.env.local` as `NEXT_PUBLIC_GA_ID`. |
+| **Vercel Analytics** | Core Web Vitals, real-user performance monitoring, page views. | Install `@vercel/analytics` via npm. Add `<Analytics />` to the root layout. Zero-config on Vercel deployments. |
+| **Vercel Speed Insights** _(optional)_ | Detailed performance scoring per route. | Install `@vercel/speed-insights` via npm. Add `<SpeedInsights />` to the root layout. |
+
+### Setup Pattern
+
+```tsx
+// src/app/layout.tsx
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        {children}
+        <Analytics />
+        <SpeedInsights />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+      </body>
+    </html>
+  );
+}
+```
+
+> **Rule**: Never load analytics via raw `<script>` tags or CDN. Always use the official npm packages listed above.
+
+---
+
+## 14. Security
+
+> Security is **not optional**. Every project must follow these practices from day one — not as an afterthought.
+
+### 14.1 Environment Variables & Secrets
+
+| Rule | Detail |
+|---|---|
+| **Never commit secrets** | All API keys, tokens, and credentials live in `.env.local` (git-ignored). Use `.env.example` (committed) to document required variables with placeholder values. |
+| **`NEXT_PUBLIC_` prefix** | Only variables that are **safe to expose to the browser** use this prefix. Server-only secrets (Stripe secret key, database URLs, etc.) must **never** have this prefix. |
+| **Vercel env management** | Use Vercel's environment variable UI for staging / production. Never hardcode secrets in code, config files, or CI scripts. |
+
+### 14.2 Input Validation & Sanitization
+
+- **Validate all user input** on the server — never trust the client. Use **Zod** for schema validation in Server Actions and API routes.
+- **Sanitize rendered content** — if displaying user-generated content, sanitize HTML to prevent XSS. Use `DOMPurify` or equivalent.
+- **Form validation**: Validate on both client (for UX) and server (for security). shadcn/ui `<Form>` + `react-hook-form` + Zod is the standard pattern.
+
+### 14.3 Authentication & Authorization
+
+- When auth is needed, use a proven library — **NextAuth.js (Auth.js)** or **Clerk** — never roll your own.
+- Protect Server Actions and API routes with session checks. Never rely solely on client-side route guards.
+- Use Next.js **Middleware** (`middleware.ts`) for route-level protection (redirect unauthenticated users before the page renders).
+
+### 14.4 HTTP Security Headers
+
+Configure security headers in `next.config.ts` (or via Vercel's `vercel.json`). At minimum:
+
+| Header | Value |
+|---|---|
+| `X-Content-Type-Options` | `nosniff` |
+| `X-Frame-Options` | `DENY` (or `SAMEORIGIN` if embedding is needed) |
+| `X-XSS-Protection` | `1; mode=block` |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` |
+| `Permissions-Policy` | Restrict unused browser APIs (`camera=(), microphone=(), geolocation=()`, etc.) |
+| `Strict-Transport-Security` | `max-age=63072000; includeSubDomains; preload` |
+| `Content-Security-Policy` | Define a strict CSP. Start restrictive, loosen only as needed for specific integrations. |
+
+### 14.5 CSRF & API Protection
+
+- **Server Actions** have built-in CSRF protection in Next.js — prefer them over custom API routes for mutations.
+- For API routes that accept external requests (webhooks), verify signatures (e.g., Stripe's `stripe.webhooks.constructEvent`).
+- Apply **rate limiting** on public-facing API routes and form submissions (use Vercel's built-in or `upstash/ratelimit`).
+
+### 14.6 Dependency Security
+
+- Run `npm audit` regularly (and in CI). Address critical / high vulnerabilities immediately.
+- Keep dependencies updated — use Dependabot or Renovate for automated PRs.
+- Minimize the number of dependencies. Fewer packages = smaller attack surface.
+
+### 14.7 Error Handling & Information Leakage
+
+- **Never expose stack traces, internal paths, or database errors** to the client. Use Next.js `error.tsx` boundaries to show user-friendly error pages.
+- Log detailed errors **server-side only** (e.g., via `console.error` or a logging service).
+- Return generic error messages to the client (`"Something went wrong"`) — never raw error objects.
+
+---
+
+## 15. Key Constraints
 
 | Constraint | Detail |
 |---|---|
-| **Hybrid Asset Loading** | Some libraries (Iconify, Flatpickr) are loaded via CDN in `layout.tsx`; the rest are bundled via npm. |
+| **No CDN Loading** | Every dependency must be installed via npm and bundled. Never load libraries via external CDN `<script>` or `<link>` tags — this ensures reproducible builds, better performance, and no third-party runtime dependencies. |
 | **No Raw CSS Values in Components** | All values reference design tokens. A component should never contain a raw hex code, pixel value, or font name. |
 | **Accessibility First** | Every interactive element must be keyboard-navigable, have visible focus indicators, proper ARIA attributes, and sufficient color contrast (WCAG AA minimum). |
 | **Mobile-First Responsive** | All layouts start from mobile and scale up via Tailwind breakpoints. |
 
 ---
 
-## 14. AI Agent — First-Loop Discovery Protocol
+## 16. AI Agent — First-Loop Discovery Protocol
 
 > **Before writing a single line of code**, the AI agent **must** ask the user the following questions (adapt wording as needed) to gather all necessary context. Do not proceed until every relevant question is answered or explicitly skipped.
 
-### 14.1 Project Identity & Branding
+### 16.1 Project Identity & Branding
 
 1. What is the **project / brand name**?
 2. What is the **tagline or one-liner** describing the project?
@@ -380,57 +586,57 @@ messages/
 5. Any **typography preferences**? (Serif headings + sans body? Specific Google Fonts?)
 6. What is the desired overall **visual style / mood**? (e.g., minimal, luxurious, playful, corporate, dark-mode-first?)
 
-### 14.2 Purpose & Audience
+### 16.2 Purpose & Audience
 
 7. What is the **primary purpose** of the website? (Portfolio, SaaS, e-commerce, booking platform, blog, landing page, etc.)
 8. Who is the **target audience**? (Demographics, tech-savviness, location.)
 9. What **action** should a visitor take? (Book, buy, sign up, contact, read?)
 10. Are there **competitor or inspiration** websites you'd like to reference?
 
-### 14.3 Content & Pages
+### 16.3 Content & Pages
 
 11. What **pages / sections** are needed? (Home, About, Services, Pricing, FAQ, Contact, Blog, etc.)
 12. Do you have **ready content** (text, images, videos), or should we use placeholders and then finalize?
 13. Do you need a **blog / news section**? If yes, what CMS (or markdown-based)?
 14. Any **legal pages** needed? (Privacy Policy, Terms of Service, Cookie Policy.)
 
-### 14.4 Features & Functionality
+### 16.4 Features & Functionality
 
 15. Do you need **user authentication**? (Sign up / login, OAuth providers?)
 16. Do you need **payments / e-commerce**? (Stripe, one-time, subscriptions, deposits?)
 17. Do you need a **booking / calendar** system?
 18. Do you need **contact forms**? What fields, and where should submissions go (email, CRM)?
-19. Any **third-party integrations**? (Analytics, chat widget, CRM, email marketing, maps?)
+19. Any **third-party integrations** beyond the defaults (Google Analytics, Vercel Analytics)? (Chat widget, CRM, email marketing, maps?)
 20. Do you need a **dark mode** toggle?
 
-### 14.5 Localization
+### 16.5 Localization
 
 21. What **languages** should the site support?
 22. What is the **default / fallback locale**? (Default: English, or system-detected.)
 23. Are there any **region-specific** content differences beyond translation?
 
-### 14.6 SEO & GEO
+### 16.6 SEO & GEO
 
 24. What are the **target keywords** or topics for SEO?
 25. Is the business **local**? If yes, provide the address, phone, and Google Business profile link for `LocalBusiness` schema.
 26. Do you need **blog-style content** for organic traffic?
 27. Any existing **Google Search Console / Analytics** accounts to connect?
 
-### 14.7 Deployment & Infrastructure
+### 16.7 Deployment & Infrastructure
 
 28. Where will this be **deployed**? (Vercel recommended for Next.js — confirm or provide alternative.)
 29. Do you have a **domain** ready?
 30. Do you need **CI/CD** beyond Vercel's defaults? (GitHub Actions, preview environments?)
 31. Any **environment variables / secrets** to configure up front?
 
-### 14.8 Design & UX Preferences
+### 16.8 Design & UX Preferences
 
 32. Do you prefer a **single-page scrolling** layout or **multi-page** navigation?
 33. Any specific **animation / interaction** preferences? (Scroll-triggered reveals, parallax, micro-interactions?)
 34. Any **accessibility** requirements beyond WCAG AA?
 35. **Mobile-first** — any specific mobile UX requirements or gestures?
 
-### 14.9 Timeline & Priorities
+### 16.9 Timeline & Priorities
 
 36. What is the **MVP scope**? (What absolutely must be in v1?)
 37. What are the **nice-to-haves** for later iterations?

@@ -1,20 +1,6 @@
 import React from 'react';
 
-export const OrganizationJsonLd = () => {
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Mediterraneo Solar",
-    "url": "https://www.mediterraneosolar.com",
-    "logo": "https://www.mediterraneosolar.com/assets/brand/logo.png",
-    "sameAs": [
-      "https://www.facebook.com/placasypanelessolares/",
-      "https://www.instagram.com/mediterraneosolar/",
-      "https://share.google/QEBgQBMwhatY7ZTdL"
-    ]
-  };
-  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
-};
+export const OrganizationJsonLd = () => null; // Kept for backwards compatibility if imported elsewhere, but we'll use LocalBusiness for the main @graph
 
 export const LocalBusinessJsonLd = ({
   city = "Elx",
@@ -26,56 +12,104 @@ export const LocalBusinessJsonLd = ({
 }) => {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Mediterraneo Solar",
-    "image": "https://www.mediterraneosolar.com/assets/brand/logo.png",
-    "url": "https://www.mediterraneosolar.com",
-    "telephone": "+34664419949",
-    "email": "info.mediterraneosolar@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Partida Alzabaras Bajo, 1127A",
-      "addressLocality": city,
-      "addressRegion": region,
-      "postalCode": postalCode,
-      "addressCountry": "ES"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": latitude,
-      "longitude": longitude
-    },
-    "areaServed": areaServed.map(area => ({
-      "@type": "City",
-      "name": area
-    })),
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Servicios de Energía Renovables",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Instalación de Placas Solares"
-          }
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "HomeAndConstructionBusiness", "HVACBusiness"],
+        "@id": "https://www.mediterraneosolar.com/#organization",
+        "name": "Mediterraneo Solar Energías Renovables",
+        "url": "https://www.mediterraneosolar.com",
+        "logo": "https://www.mediterraneosolar.com/assets/brand/logo.png",
+        "image": "https://www.mediterraneosolar.com/assets/brand/logo.png",
+        "description": "Mediterraneo Solar Energías Renovables is a trusted HVAC and Home Construction Business founded in 2020 by Diego Gonzalez. With over 120+ installations and a 5/5 on Google Reviews, we specialize in solar energy, HVAC, and electrical services in Alicante, operating within a 50km radius.",
+        "foundingDate": "2020",
+        "founder": {
+          "@type": "Person",
+          "name": "Diego Gonzalez"
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Climatización (Aire Acondicionado y Calefacción)"
-          }
+        "telephone": ["+34621230525", "+34664419949"],
+        "email": "info.mediterraneosolar@gmail.com",
+        "priceRange": "€€",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "19:00"
         },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Instalaciones Eléctricas"
-          }
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Partida Alzabaras Bajo, 1127A",
+          "addressLocality": city,
+          "addressRegion": region,
+          "postalCode": postalCode,
+          "addressCountry": "ES"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": latitude,
+          "longitude": longitude
+        },
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": latitude,
+            "longitude": longitude
+          },
+          "geoRadius": "50000"
+        },
+        "sameAs": [
+          "https://maps.app.goo.gl/SAHCRHmjkyZmMcLA7",
+          "https://share.google/l3eyK9A9feXoACLnw",
+          "https://www.google.com/search?client=firefox-b-d&hs=i1lp&sca_esv=8de6bca2391c3c3e&sxsrf=ANbL-n6NdWWgCbOJ8IR59osP1eGdMwRReQ:1777125930547&q=MEDITERRANEO+SOLAR+ENERG%C3%8DAS+RENOVABLES&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOdRV0G68nL8EqzSZF7DkS_ajyS4nN2J-RrEH8U9rwO0krTb_7UnBGfciGcQcV1OviPVvEPM%3D&uds=ALYpb_mOSBfVE_qjsUIUDwhXk-cvIlw_kJbQeCxVTILru_TFvvJKXmYTcNbQVtkDGp6qvDJSKL93w0Zft3TOxR1_l-2s2DLyenYgIhnw4vBlqHsaKa6thJhXnv5DqhvLFt98DzoApJkLkymyyRkLs1XhMoY5pdKZZw&sa=X&ved=2ahUKEwityb7-lYmUAxUGB9sEHdl0CboQ3PALegQIGxAE&biw=3237&bih=1375&dpr=1",
+          "https://www.facebook.com/placasypanelessolares/",
+          "https://www.instagram.com/mediterraneosolar/"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Energía Renovables",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Instalación de Placas Solares"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Climatización (Aire Acondicionado y Calefacción)"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Instalaciones Eléctricas"
+              }
+            }
+          ]
         }
-      ]
-    }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.mediterraneosolar.com"
+          }
+        ]
+      }
+    ]
   };
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />;
 };
