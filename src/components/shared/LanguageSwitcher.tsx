@@ -35,8 +35,8 @@ export default function LanguageSwitcher({ isDark }: { isDark?: boolean }) {
         align="end"
         position="popper"
         sideOffset={8}
-        className={`border-none backdrop-blur-md shadow-lg rounded-xl min-w-[5rem] ${isDark
-          ? 'bg-white/10 text-white'
+        className={`border-none backdrop-blur-md shadow-lg rounded-xl min-w-[5rem] z-[150] ${isDark
+          ? 'md:bg-white/10 bg-neutral-900/70 text-white'
           : 'bg-white/70 text-neutral-900'
           }`}
       >

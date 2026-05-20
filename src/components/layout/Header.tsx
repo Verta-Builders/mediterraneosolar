@@ -67,7 +67,7 @@ export default function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-3">
-          <div className={`${overDarkSection ? 'bg-white/10 rounded-full backdrop-blur-md' : ''}`}>
+          <div className={`hidden md:block ${overDarkSection ? 'bg-white/10 rounded-full backdrop-blur-md' : ''}`}>
             <LanguageSwitcher isDark={overDarkSection} />
           </div>
 

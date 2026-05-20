@@ -7,6 +7,7 @@ import { Link } from "@/i18n/routing";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import LanguageSwitcher from "@/components/shared/LanguageSwitcher";
 
 interface MobileMenuProps {
   overDarkSection: boolean;
@@ -98,7 +99,16 @@ export default function MobileMenu({ overDarkSection, scrolled }: MobileMenuProp
             ))}
           </nav>
 
-          <div className={`mt-auto pb-10 pt-8 border-t ${isDarkNav ? "border-white/10" : "border-neutral-100"}`}>
+          <div className={`mt-auto pb-10 pt-8 border-t ${isDarkNav ? "border-white/10" : "border-neutral-100"} flex flex-col gap-6`}>
+            <div className="flex items-center justify-between">
+              <span className={`text-md font-medium ${isDarkNav ? "text-white/70" : "text-neutral-500"}`}>
+                {t("language")}
+              </span>
+              <div className={isDarkNav ? 'bg-white/10 rounded-full backdrop-blur-md' : 'bg-neutral-100 rounded-full'}>
+                <LanguageSwitcher isDark={isDarkNav} />
+              </div>
+            </div>
+
             <a
               href="#contact"
               onClick={() => setIsOpen(false)}
